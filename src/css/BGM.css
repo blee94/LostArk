@@ -1,0 +1,35 @@
+body {
+  color: wheat;
+}
+h2 {
+  position: relative;
+  left: 15px;
+  margin-top: 5px;
+}
+ul {
+  list-style: none;
+  cursor: pointer;
+}
+ul li {
+  transition: transform 0.3s ease;
+}
+ul li:hover {
+  transform: scale(1.2);
+}
+.NowPlaying {
+  font-weight: 500;
+  font-size: 20px;
+  color: rgb(199, 93, 93);
+}
+.MusicTrackBox {
+  /* border: 1px solid white; */
+  width: 400px;
+}
+.Volume {
+  position: relative;
+  bottom: 4px;
+}
+button {
+  background-color: burlywood;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,125 @@
+.ContainerClassMain1 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 951px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'c1 c2 c3'
+    'c4 c5 c6';
+}
+.c1 {
+  grid-area: c1;
+}
+.c2 {
+  grid-area: c2;
+}
+.c3 {
+  grid-area: c3;
+}
+.c4 {
+  grid-area: c4;
+}
+.c5 {
+  grid-area: c5;
+}
+.c6 {
+  grid-area: c6;
+}
+.ContainerClassMain1 div img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.ContainerClassMain1 div img:hover {
+  opacity: 1;
+}
+.ContainerClassMain2 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 100%;
+  background-color: #212227;
+}
+.ContainerClassMain2 img {
+  width: 100%;
+  height: auto;
+}
+.ContainerClassMain3 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 100%;
+  background-color: #212227;
+}
+.ContainerClassMain3 img {
+  width: 100%;
+  height: auto;
+}
+.ContainerClassMain4 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 100%;
+  background-color: #212227;
+}
+.ContainerClassMain4 img {
+  width: 100%;
+  height: auto;
+}
+.ContainerClassMain5 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 100%;
+  background-color: #212227;
+}
+.ContainerClassMain5 img {
+  width: 100%;
+  height: auto;
+}
+.ContainerClassMain6 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 100%;
+  background-color: #212227;
+}
+.ContainerClassMain6 img {
+  width: 100%;
+  height: auto;
+}
+.ContainerClassMain7 {
+  border-bottom: 1px solid wheat;
+  width: 1900px;
+  height: 100%;
+  background-color: #212227;
+}
+.ContainerClassMain7 img {
+  width: 100%;
+  height: auto;
+}
+
+.classVideo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.sideNav {
+  position: fixed;
+  top: 400px;
+  right: 30px;
+  width: 92px;
+  height: 290px;
+  background-color: rgb(66, 62, 62);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 999;
+}
+.sideNav ul li {
+  margin-top: 20px;
+  position: relative;
+  right: 20px;
+}
