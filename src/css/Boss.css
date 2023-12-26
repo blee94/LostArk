@@ -1,0 +1,15 @@
+.ContainerBoss {
+  /* border: 1px wheat solid; */
+  width: 1000px;
+  height: 500px;
+  display: grid;
+  grid-template-areas: 'a b c' 'd e f';
+  gap: 20px;
+}
+.BoxBoss {
+  border: 1px wheat solid;
+}
+.BoxBoss img {
+  width: 330px;
+  height: 240px;
+}

@@ -1,0 +1,126 @@
+.MyCharacterContainer {
+  /* border: 1px solid wheat; */
+  width: 800px;
+  height: 500px;
+  display: flex;
+}
+.CharacterStandCase {
+  /* border: 1px solid wheat; */
+  width: 540px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.My1 {
+  width: 200px;
+  position: relative;
+  top: 50px;
+  z-index: 2;
+}
+.StandMain {
+  border: 1px solid wheat;
+  border-radius: 50%;
+  background-color: rgb(63, 61, 57);
+  opacity: 50%;
+  width: 180px;
+  height: 35px;
+  position: relative;
+  top: 15px;
+  z-index: 1;
+  box-shadow: 0 0 20px rgb(250, 250, 231), 0 0 20px rgb(255, 255, 235) inset;
+}
+.StandSub {
+  border: 1px solid wheat;
+  border-radius: 50%;
+  background-color: rgb(63, 61, 57);
+  opacity: 50%;
+  width: 180px;
+  height: 35px;
+  position: relative;
+  bottom: 20px;
+  box-shadow: 0 0 20px rgb(250, 250, 231), 0 0 20px rgb(255, 255, 235) inset;
+  animation: moveUpDown 3s infinite;
+}
+@keyframes moveUpDown {
+  0% {
+    top: -20px;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: -20px;
+  }
+}
+.CharacterInfo {
+  /* border: 1px solid wheat; */
+  width: 560px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.NicknameC {
+  position: relative;
+  top: 50px;
+  left: 30px;
+}
+.ClassC {
+  position: relative;
+  top: 70px;
+  left: 30px;
+}
+.TitleC {
+  position: relative;
+  top: 90px;
+  left: 30px;
+}
+.EquipC {
+  position: relative;
+  top: 110px;
+  left: 30px;
+}
+.CharacterInfo div {
+  font-weight: 600;
+}
+.CharacterInfo div span {
+  font-weight: 100;
+}
+.CharacterInfo > div {
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateX(20px);
+}
+
+.CharacterInfo > div:nth-child(1) {
+  transition-delay: 0s;
+}
+.CharacterInfo > div:nth-child(2) {
+  transition-delay: 0.7s;
+}
+.CharacterInfo > div:nth-child(3) {
+  transition-delay: 1.4s;
+}
+.CharacterInfo > div:nth-child(4) {
+  transition-delay: 2.1s;
+}
+
+.CharacterInfo > div.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.Info4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: min-content;
+  gap: 5px;
+  position: relative;
+  left: 50px;
+  width: 100px;
+  bottom: 20px;
+}
+
+.Info4 img {
+  width: 40px;
+  position: relative;
+}
