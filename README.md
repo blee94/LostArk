@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Sesac_Project_02
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+온라인 rpg게임 로스트아크를 즐기는 유저들에게 유용한 정보 제공 & 유저간 소통을 위한 웹사이트
 
-## Available Scripts
+**[메인페이지]** 메인 포스터 업데이트, 여섯 종류의 원하는 페이지로 이동
 
-In the project directory, you can run:
+**[마이페이지]** 메인 캐릭터 등록, 좋아요 한 노래/이미지 관리, 웹사이트에 접속중인 다른 유저와 채팅(keep)
 
-### `npm start`
+**[BGM]** 게임사가 제공하는 모든 음원을 무료로 재생, 마음에 드는 곡 좋아요 누르고 마이페이지에서 관리
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**[Boss]** 각 보스의 포스터 표시, 링크 이동시 대표 BGM 재생, 보상/공략 등 상세정보 확인
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**[OOTD]** 코디/캡쳐 자랑하기, 좋아요 눌러 마이페이지에서 관리
 
-### `npm test`
+**[App]** 여러 미니게임? (구상중)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**[MyCharacter]** 자신의 캐릭터 검색해서 상세정보 찾아보기, 메인 캐릭터로 등록
 
-### `npm run build`
+**[Class]** 모든 클래스 모아보기(상세정보 포함)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**[회원가입/로그인]** 유효성검사, ID/PW 찾기
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **개발 기간** : 2023-12-26 ~ 2024-01-11(2주)
+- **배포 주소** : http://~~~~~
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+# 🔧 개발환경
+## Front
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Back
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Environment
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API
+**[LostArk](https://developer-lostark.game.onstove.com))**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🗂️ 디렉토리 구조
 
-## Learn More
+<br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📃 API 명세서
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
 
-### Code Splitting
+## 📋 ERD 다이어그램
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br />
 
-### Analyzing the Bundle Size
+# 🖥️ 화면 구성 및 주요 기능
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
