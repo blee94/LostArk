@@ -11,7 +11,7 @@ import Boss from './pages/MainPage/Boss';
 import Character from './pages/MainPage/Character';
 import Class from './pages/MainPage/Class';
 import OOTD from './pages/MainPage/OOTD';
-import Stone from './pages/MainPage/Stone';
+import Entertainment from './pages/MainPage/Entertainment';
 import Boss1 from './pages/MainPage/Boss/Boss1';
 import Boss2 from './pages/MainPage/Boss/Boss2';
 import Boss3 from './pages/MainPage/Boss/Boss3';
@@ -34,7 +34,7 @@ function App() {
           <Route path='/Character' element={<Character />} />
           <Route path='/Class' element={<Class />} />
           <Route path='/OOTD' element={<OOTD />} />
-          <Route path='/Stone' element={<Stone />} />
+          <Route path='/Entertainment' element={<Entertainment />} />
           <Route path='/Boss1' element={<Boss1 />} />
           <Route path='/Boss2' element={<Boss2 />} />
           <Route path='/Boss3' element={<Boss3 />} />

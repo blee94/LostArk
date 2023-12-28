@@ -10,12 +10,11 @@ function Header() {
     <>
       <header className='ContainerHeader'>
         <img
-          className='Mococo'
-          alt='Mococo'
-          src='/img/thanks.png'
+          className='Logo'
+          alt='Logo'
+          src='/img/Lalogo.png'
           onClick={() => goToPage('')}
         />
-        <img className='Logo' alt='Logo' src='/img/logo.png' />
         <span className='LogInMyPage' onClick={() => goToPage('MyPage')}>
           MyPage
         </span>

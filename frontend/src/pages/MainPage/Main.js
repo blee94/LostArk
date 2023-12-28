@@ -49,8 +49,8 @@ function Main() {
           <Link to='/Character' className='GridBox B4'>
             내 캐릭터
           </Link>
-          <Link to='/Stone' className='GridBox B5'>
-            어빌리티 스톤
+          <Link to='/Entertainment' className='GridBox B5'>
+            Entertainment
           </Link>
           <Link to='/Class' className='GridBox B6'>
             클래스

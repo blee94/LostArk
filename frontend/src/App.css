@@ -62,25 +62,12 @@
   display: flex;
   align-items: center;
 }
-img.Mococo {
-  position: relative;
-  top: -10px;
-  left: 70px;
-  width: 60px;
-  height: 60px;
-  transition: transform 0.2s;
-  cursor: pointer;
-  z-index: 1;
-}
-.Mococo:hover {
-  transform-origin: bottom left;
-  transform: rotate(20deg);
-}
 img.Logo {
   position: relative;
   top: 0px;
-  width: 400px;
-  left: -50px;
+  width: 150px;
+  left: 100px;
+  cursor: pointer;
 }
 span.LogInHeader {
   position: absolute;
