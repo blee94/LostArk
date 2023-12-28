@@ -87,11 +87,12 @@ span.LogInMyPage {
   flex-shrink: 0;
   background-color: var(--color-header-footer);
   display: flex;
+  justify-content: center;
 }
 img.Smile {
   position: relative;
   width: 80px;
-  left: 550px;
+  margin-right: 80px;
 }
 .ContentFooter {
   color: wheat;
@@ -101,7 +102,6 @@ img.Smile {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  left: 650px;
 }
 .L1 {
   font-size: var(--font-small);

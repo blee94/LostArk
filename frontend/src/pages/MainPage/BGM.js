@@ -164,52 +164,55 @@ const BGM = () => {
     setIsPlaying(true);
   };
   return (
-    <div>
+    <div className='bgmContainer'>
       <div className='BoxImg'>
         <img src={currentTrack.image} alt={currentTrack.title} />
       </div>
-      <h2>
-        Music Player <span className='material-icons'>music_note</span>
-      </h2>
-      <audio ref={audioPlayer} src={currentTrack.src} volume={volume} />
-      <div className='MusicTrackBox'>
-        <ul>
-          {playlist.map((track) => (
-            <li
-              key={track.id}
-              className={currentTrack.id === track.id ? 'NowPlaying' : ''}
-              onClick={() => playSelectedTrack(track)}
-            >
-              {track.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <p className='NowPlaying'>Now Playing: {currentTrack.title}</p>
-        <button onClick={playPreviousTrack}>
-          <span className='material-icons'>fast_rewind</span>
-        </button>
-        <button onClick={playPauseToggle}>
-          {isPlaying ? (
-            <span className='material-icons'>pause</span>
-          ) : (
-            <span className='material-icons'>play_arrow</span>
-          )}
-        </button>
-        <button onClick={playNextTrack}>
-          <span className='material-icons'>fast_forward</span>
-        </button>
-        <span className='material-icons'>volume_up</span>
-        <input
-          className='Volume'
-          type='range'
-          min='0'
-          max='1'
-          step='0.1'
-          value={volume}
-          onChange={handleVolumeChange}
-        />
+      <div className='musicPlayer'>
+        <h2>
+          Music Player <span className='material-icons'>music_note</span>
+        </h2>
+        <audio ref={audioPlayer} src={currentTrack.src} volume={volume} />
+        <div className='MusicTrackBox'>
+          <ul>
+            {playlist.map((track) => (
+              <li
+                key={track.id}
+                className={currentTrack.id === track.id ? 'NowPlaying' : ''}
+                onClick={() => playSelectedTrack(track)}
+              >
+                {track.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className='musicTool'>
+          <p className='NowPlaying'>Now Playing: {currentTrack.title}</p>
+          <button onClick={playPreviousTrack}>
+            <span className='material-icons'>fast_rewind</span>
+          </button>
+          <button onClick={playPauseToggle}>
+            {isPlaying ? (
+              <span className='material-icons'>pause</span>
+            ) : (
+              <span className='material-icons'>play_arrow</span>
+            )}
+          </button>
+          <button onClick={playNextTrack}>
+            <span className='material-icons'>fast_forward</span>
+          </button>
+          <span className='material-icons'>volume_up</span>
+          <input
+            className='Volume'
+            type='range'
+            min='0'
+            max='1'
+            step='0.1'
+            value={volume}
+            onChange={handleVolumeChange}
+          />
+        </div>
       </div>
     </div>
   );

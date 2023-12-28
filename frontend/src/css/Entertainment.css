@@ -1,0 +1,204 @@
+/* -------------app1------------- */
+
+.app1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.mainContainer1 {
+  background-color: gray;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-areas: 'a b c' 'd e f' 'g h i';
+}
+
+.smallBox {
+  background-color: rgb(58, 57, 55);
+  width: 100px;
+  height: 100px;
+  opacity: 98%;
+  z-index: 999;
+  border: 1px solid white;
+  /* filter: blur(4px); */
+}
+
+.hide {
+  display: none;
+}
+
+.box1 {
+  grid-area: a;
+}
+.box2 {
+  grid-area: b;
+}
+.box3 {
+  grid-area: c;
+}
+.box4 {
+  grid-area: d;
+}
+.box5 {
+  grid-area: e;
+}
+.box6 {
+  grid-area: f;
+}
+.box7 {
+  grid-area: g;
+}
+.box8 {
+  grid-area: h;
+}
+.box9 {
+  grid-area: i;
+}
+
+.randomButton {
+  width: 50px;
+}
+
+.containerSubmitAnswer {
+  display: flex;
+  /* border: 1px solid white; */
+  width: 250px;
+  justify-content: space-between;
+  padding-right: 30px;
+  padding-left: 10px;
+}
+.containerSubmitAnswer input {
+  width: 150px;
+  height: 30px;
+}
+
+.randomTest {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+}
+/* -------------app2------------- */
+.app2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.mainContainer2 {
+  border: 1px solid white;
+  width: 900px;
+  height: 500px;
+  display: grid;
+  grid-template-areas: 'a b c d' 'e f g h' 'i j k l';
+  gap: 20px;
+}
+.box1_02 {
+  grid-area: a;
+  /* transition: transform 1s; */
+}
+/* .box1_02:hover {
+  transform: rotatex(180deg);
+} */
+.box2_02 {
+  grid-area: b;
+}
+.box3_02 {
+  grid-area: c;
+}
+.box4_02 {
+  grid-area: d;
+}
+.box5_02 {
+  grid-area: e;
+}
+.box6_02 {
+  grid-area: f;
+}
+.box7_02 {
+  grid-area: g;
+}
+.box8_02 {
+  grid-area: h;
+}
+.box9_02 {
+  grid-area: i;
+}
+.box10_02 {
+  grid-area: j;
+}
+.box11_02 {
+  grid-area: k;
+}
+.box12_02 {
+  grid-area: l;
+}
+.smallBox_02 {
+  border: 1px solid white;
+  transition: transform 1s;
+}
+.smallBox_02:hover {
+  transform: rotatex(180deg);
+}
+/* -------------app3------------- */
+.app3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.mainContainer3 {
+  border: 1px solid white;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftBox {
+  border: 1px solid white;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.leftBoxTop {
+  border: 1px solid white;
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+.leftBoxBottom {
+  border: 1px solid white;
+  position: relative;
+  width: 400px;
+  height: 100px;
+}
+.rightBox {
+  border: 1px solid white;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.rightBoxTop {
+  border: 1px solid white;
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+.rightBoxBottom {
+  border: 1px solid white;
+  position: relative;
+  width: 400px;
+  height: 100px;
+}

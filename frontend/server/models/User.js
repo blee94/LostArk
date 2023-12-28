@@ -16,14 +16,14 @@ function User(Sequelize, DataTypes) {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
-      email: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-      },
-      nickname: {
-        type: DataTypes.STRING(50),
-        allowNull: false,
-      },
+      // email: {
+      //   type: DataTypes.STRING(100),
+      //   allowNull: false,
+      // },
+      // nickname: {
+      //   type: DataTypes.STRING(50),
+      //   allowNull: false,
+      // },
     },
     {
       tableName: 'User',
