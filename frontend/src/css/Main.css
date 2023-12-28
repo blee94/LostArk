@@ -155,4 +155,11 @@
   cursor: pointer;
 }
 
+.audioEQ {
+  width: 156px;
+  height: 150px;
+  position: absolute;
+  z-index: -1;
+}
+
 /* --------------------------img----------------------------- */

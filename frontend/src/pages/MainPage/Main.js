@@ -38,9 +38,11 @@ function Main() {
         </div>
         <div className='ContainerGrid'>
           <Link to='/BGM' className='GridBox B1'>
+            <img src='img/audioEQ.gif' className='audioEQ' alt='...' />
             BGM
           </Link>
           <Link to='/Boss' className='GridBox B2'>
+            {/* <img src='img/boss1.gif' className='bossGif' alt='...' /> */}
             군단장
           </Link>
           <Link to='/OOTD' className='GridBox B3'>
