@@ -2,12 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import '../../css/BGM.css';
 
 const BGM = () => {
-  const audioPlayer = useRef(null); // 오디오 요소에 접근하기 위한 ref
+  const audioPlayer = useRef(null);
   const [playlist, setPlaylist] = useState([
     {
       id: 1,
       title: 'Sailing the Dream',
       src: '/playlist/vol1_01_Sailing the Dream.wav',
+      image: '/img/audioImg1.png',
     },
     { id: 2, title: 'Leonhart', src: '/playlist/vol1_02_Leonhart.wav' },
     { id: 3, title: "Aman's Theme", src: "/playlist/vol1_03_Aman's Theme.wav" },
@@ -131,7 +132,7 @@ const BGM = () => {
     );
     const nextIndex = (currentIndex + 1) % playlist.length;
     setCurrentTrack(playlist[nextIndex]);
-    setIsPlaying(true); // 다음 트랙 재생 시 항상 플레이
+    setIsPlaying(true);
   };
 
   const playPreviousTrack = () => {
@@ -141,7 +142,7 @@ const BGM = () => {
     const previousIndex =
       (currentIndex - 1 + playlist.length) % playlist.length;
     setCurrentTrack(playlist[previousIndex]);
-    setIsPlaying(true); // 이전 트랙 재생 시 항상 플레이
+    setIsPlaying(true);
   };
 
   const handleVolumeChange = (e) => {
@@ -164,6 +165,9 @@ const BGM = () => {
   };
   return (
     <div>
+      <div className='BoxImg'>
+        <img src={currentTrack.image} alt={currentTrack.title} />
+      </div>
       <h2>
         Music Player <span className='material-icons'>music_note</span>
       </h2>

@@ -33,3 +33,16 @@ button {
   background-color: burlywood;
   margin-bottom: 10px;
 }
+
+.BoxImg {
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  border: 1px white solid;
+  width: 502px;
+  height: 302px;
+}
+.BoxImg img {
+  width: 500px;
+  height: 300px;
+}
