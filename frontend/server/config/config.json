@@ -1,0 +1,16 @@
+{
+  "development": {
+    "database": "blee_pr2",
+    "host": "localhost",
+    "username": "blee",
+    "password": "1123",
+    "dialect": "mysql"
+  },
+  "production": {
+    "database": "blee_pr2",
+    "host": "localhost",
+    "username": "blee",
+    "password": "1123",
+    "dialect": "mysql"
+  }
+}

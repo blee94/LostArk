@@ -31,7 +31,7 @@
 ## Front
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black)
 
 ## Back
 
