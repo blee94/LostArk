@@ -52,6 +52,7 @@
   background-color: var(--color-bg);
   align-items: center;
   justify-content: center;
+  /* padding-bottom: var(--height-footer-big); */
 }
 /* --------------header-------------- */
 .ContainerHeader {

@@ -5,7 +5,7 @@
 .musicPlayer {
   height: 100vh;
   position: relative;
-  right: 250px;
+  right: 650px;
 }
 
 body {
@@ -23,7 +23,7 @@ ul {
 }
 ul li {
   transition: transform 0.3s ease;
-  padding-top: 5px;
+  padding-top: 0px;
 }
 ul li:hover {
   transform: scale(1.2);
@@ -39,7 +39,8 @@ ul li:hover {
 }
 .Volume {
   position: relative;
-  bottom: 4px;
+  bottom: 2px;
+  left: 3px;
 }
 button {
   background-color: burlywood;
@@ -47,8 +48,8 @@ button {
 
 .BoxImg {
   position: relative;
-  top: 300px;
-  right: 450px;
+  top: 200px;
+  left: 450px;
   border: 1px white solid;
   width: 702px;
   height: 402px;
@@ -59,6 +60,44 @@ button {
 }
 
 .musicTool {
+  position: absolute;
+  top: 650px;
+  width: 500px;
+  left: 600px;
+}
+.progressBar {
   position: relative;
-  top: 50px;
+  top: 20px;
+  right: 130px;
+  border-radius: 10px;
+  background-color: rgb(70, 67, 64);
+  cursor: pointer;
+}
+.progress {
+  border-radius: 10px;
+  background-color: rgb(182, 181, 154);
+  cursor: pointer;
+}
+.Volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.timeDisplay {
+  position: relative;
+  width: 200px;
+  left: 390px;
+  bottom: 1px;
+}
+
+.musicTool > button {
+  margin-right: 5px;
+}
+
+.material-icons {
+  position: relative;
+  top: 2px;
 }
