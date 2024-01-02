@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function MyPage() {
-  const [characterName, setCharacterName] = useState(''); // 입력 값을 추적할 상태
+  const [characterName, setCharacterName] = useState('');
+  const [characterInfo, setCharacterInfo] = useState(null); // Character 정보를 저장할 상태
 
   const requestBtn = async () => {
     try {
-      const test = await axios.get(
+      const response = await axios.get(
         `https://developer-lostark.game.onstove.com/armories/characters/${characterName}`,
         {
           headers: {
@@ -16,9 +17,8 @@ function MyPage() {
           },
         }
       );
-      console.log(test.data.ArmoryProfile);
-      const CName = test.data.ArmoryProfile.CharacterClassName;
-      console.log(CName);
+      // API로부터 받은 데이터 설정
+      setCharacterInfo(response.data.ArmoryProfile);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -41,6 +41,18 @@ function MyPage() {
         <button type='button' onClick={requestBtn}>
           버튼
         </button>
+        {/* CharacterClassName을 보여주는 부분 */}
+        {characterInfo && (
+          <>
+            <p>Character Class Name: {characterInfo.CharacterClassName}</p>
+            {/* CharacterImage를 보여주는 부분 */}
+            <img
+              src={characterInfo.CharacterImage}
+              alt='Character Image'
+              style={{ maxWidth: '200px', maxHeight: '200px' }}
+            />
+          </>
+        )}
       </header>
     </>
   );

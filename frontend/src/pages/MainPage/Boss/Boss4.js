@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import '../../../css/Boss-link.css';
+import { useEffect } from 'react';
 
 function Boss4() {
   const videoId = 'PCt3w7uTdHQ';
@@ -11,9 +12,23 @@ function Boss4() {
       autoplay: 1,
     },
   };
+  useEffect(() => {
+    const bossGif = document.querySelector('.bossGif_04');
+    bossGif.style.zIndex = '999';
 
+    const animationEndHandler = () => {
+      bossGif.style.zIndex = '-1';
+    };
+
+    bossGif.addEventListener('animationend', animationEndHandler);
+
+    return () => {
+      bossGif.removeEventListener('animationend', animationEndHandler);
+    };
+  }, []);
   return (
     <div className='ContainerLinkBoss4'>
+      <img src='img/boss4.gif' className='bossGif_04' alt='...' />
       <h2 className='nameBoss'>쿠크세이튼</h2>
       <div className='MusicBossLink4'>
         <YouTube videoId={videoId} opts={opts} />
@@ -74,7 +89,7 @@ function Boss4() {
         </div>
         <div className='carousel-inner'>
           <div className='carousel-item active'>
-            <img src='img/bs12.jpg' className='d-block w-100' alt='...' />
+            <img src='img/bs10.jpg' className='d-block w-100' alt='...' />
             <div className='carousel-caption d-none d-md-block'></div>
           </div>
           <div className='carousel-item'>

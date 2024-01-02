@@ -2,14 +2,22 @@
   /* border: 1px wheat solid; */
   width: 1000px;
   height: 500px;
-  display: grid;
-  grid-template-areas: 'a b c' 'd e f';
-  gap: 20px;
+  display: flex;
+  /* flex-direction: row; */
 }
-.BoxBoss {
-  border: 1px wheat solid;
+.boxBoss {
+  width: 170px;
+  height: 563px;
+  border: none;
+  z-index: 999;
+  position: relative;
+  cursor: pointer;
+  background-color: black;
+  opacity: 0.3;
 }
-.BoxBoss img {
-  width: 330px;
-  height: 240px;
+.boxBoss:hover {
+  opacity: 0;
+}
+.bossChoose {
+  position: absolute;
 }

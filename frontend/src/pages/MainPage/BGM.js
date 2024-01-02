@@ -5,7 +5,6 @@ const BGM = () => {
   const audioPlayer = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  // progress bar 클릭 이벤트 핸들러
   const handleProgressBarClick = (e) => {
     const rect = e.target.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
@@ -241,7 +240,7 @@ const BGM = () => {
     audioPlayer.current.volume = newVolume;
   };
   // -----------------------
-
+  // progress bar 클릭/시간표시 부분
   useEffect(() => {
     audioPlayer.current.src = currentTrack.src;
     if (isPlaying) {
@@ -257,21 +256,25 @@ const BGM = () => {
   };
 
   useEffect(() => {
-    if (audioPlayer.current) {
-      const updateTime = () => {
+    const updateTime = () => {
+      if (audioPlayer.current) {
         setCurrentTime(audioPlayer.current.currentTime);
         setDuration(audioPlayer.current.duration);
-      };
+      }
+    };
 
+    if (audioPlayer.current) {
       audioPlayer.current.addEventListener('timeupdate', updateTime);
-
-      return () => {
-        // Check if audioPlayer.current exists before removing the event listener
-        if (audioPlayer.current) {
-          audioPlayer.current.removeEventListener('timeupdate', updateTime);
-        }
+      audioPlayer.current.onended = () => {
+        playNextTrack();
       };
     }
+
+    return () => {
+      if (audioPlayer.current) {
+        audioPlayer.current.removeEventListener('timeupdate', updateTime);
+      }
+    };
   }, [audioPlayer]);
 
   const formatTime = (time) => {
@@ -286,6 +289,7 @@ const BGM = () => {
     }
     return 0;
   };
+  // --------------------------------------
 
   return (
     <div className='bgmContainer'>

@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import '../../../css/Boss-link.css';
+import { useEffect } from 'react';
 
 function Boss5() {
   const videoId = 'omCbuCmXXaU';
@@ -11,21 +12,36 @@ function Boss5() {
       autoplay: 1,
     },
   };
+  useEffect(() => {
+    const bossGif = document.querySelector('.bossGif_05');
+    if (bossGif) {
+      bossGif.style.zIndex = '999';
 
+      const animationEndHandler = () => {
+        bossGif.style.zIndex = '-1';
+      };
+
+      bossGif.addEventListener('animationend', animationEndHandler);
+
+      return () => {
+        bossGif.removeEventListener('animationend', animationEndHandler);
+      };
+    }
+  }, []);
   return (
     <div className='ContainerLinkBoss5'>
+      <img src='img/boss5.gif' className='bossGif_05' alt='...' />
       <h2 className='nameBoss'>아브렐슈드</h2>
       <div className='MusicBossLink5'>
         <YouTube videoId={videoId} opts={opts} />
       </div>
       <div className='AboutBoss'>
-        로스트아크 역사상 최다 관문인 6 관문을 들고 나왔으며, 최대 길이, 연출력
-        끝판왕, 뒤틀린 공간과 차원을 컨셉으로 하여 <b>최악의 난이도</b>를
-        자랑한다.심지어 클리어에 1시간 넘게 소요 될지도 모른다고. 하필
-        아브렐슈드 직전 군단장인 쿠크세이튼이 이전의 두 군단장 레이드와 달리
-        아무도 당일 격파에 성공하지 못하는 흉악한 난이도를 자랑하면서 금강선이
-        대놓고 어려울거라 선전포고한 아브렐슈드는 얼마나 어려울지 두렵다는
-        얘기가 나왔었다.
+        군단장의 일원이며 직책은 <b>몽환군단장</b>. 카제로스가 처음으로 임명한
+        군단장이다. 카제로스의 최측근이자 참모로 강력한 힘을 지닌 악마이며
+        페트라니아 최고의 지략가이다. 사슬 전쟁 당시 승부를 내지 못한 실린
+        종족의 여왕 아제나와 대결 플래그가 서 있다. 성격이 난폭하고 원소의
+        힘으로 폭격을 가하는 아제나와 대조적 으로, 성격은 차분하면서 교활하고
+        환영과 공간을 다루며 전장의 모습을 재창조해내는 환영 마법을 사용한다.
       </div>
       <span className='Strategy'>
         <b>공략영상</b>

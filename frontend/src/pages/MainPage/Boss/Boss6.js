@@ -1,9 +1,10 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import '../../../css/Boss-link.css';
+import { useEffect } from 'react';
 
 function Boss6() {
-  const videoId = '-L_TVqKCl2g';
+  const videoId = 'KFh8Y-GgkOo';
   const opts = {
     height: '360',
     width: '640',
@@ -11,20 +12,34 @@ function Boss6() {
       autoplay: 1,
     },
   };
+  useEffect(() => {
+    const bossGif = document.querySelector('.bossGif_06');
+    bossGif.style.zIndex = '999';
 
+    const animationEndHandler = () => {
+      bossGif.style.zIndex = '-1';
+    };
+
+    bossGif.addEventListener('animationend', animationEndHandler);
+
+    return () => {
+      bossGif.removeEventListener('animationend', animationEndHandler);
+    };
+  }, []);
   return (
-    <div className='ContainerLinkBoss'>
-      <h2 className='nameBoss'>라우리엘</h2>
+    <div className='ContainerLinkBoss6'>
+      <img src='img/boss6.gif' className='bossGif_06' alt='...' />
+      <h2 className='nameBoss'>일리아칸</h2>
       <div className='MusicBossLink6'>
         <YouTube videoId={videoId} opts={opts} />
       </div>
       <div className='AboutBoss'>
-        모든 라제니스의 존경을 받는 <b>라제니스의 검의 수장</b>이며 예언과
-        제의를 담당하는 라제니스의 검. 과거엔 직접 루페온과 만난 적도 있다고 할
-        정도로 오랜 시간을 살아왔으며, 셀 수 없는 시간 동안 엘가시아의
-        라제니스들을 지켜봤다. 대놓고 언급은 없지만 다른 라제니스의 검 아자키엘,
-        디오게네스도 마찬가지이며 프리우나도 라우리엘에게 가르침을 받았을 것으로
-        보인다. 티엔은 라우리엘의 절친이다.
+        쇠락과 부패의 권능으로 죽음을 완성하는, <b>질병군단장</b>. 온몸이 썩어
+        문드러진 시체같은 형상을 한 악마로, 독을 품은 벌레 떼나 질병을 퍼뜨리는
+        마수, 언데드 따위를 만들어내는 힘이 있다. 설명에 따르면 페트라니아에서
+        암흑의 별을 무너트리고 심연의 바다의 모든 생명체를 먹어치웠으며,
+        카르테론의 군주란 칭호를 가졌다. '아트록스'라는 이름의 낫을 주 무기로
+        사용한다.
       </div>
       <span className='Strategy'>
         <b>공략영상</b>
@@ -73,7 +88,7 @@ function Boss6() {
         </div>
         <div className='carousel-inner'>
           <div className='carousel-item active'>
-            <img src='img/bs16.jpg' className='d-block w-100' alt='...' />
+            <img src='img/bs16.png' className='d-block w-100' alt='...' />
             <div className='carousel-caption d-none d-md-block'></div>
           </div>
           <div className='carousel-item'>
@@ -81,7 +96,7 @@ function Boss6() {
             <div className='carousel-caption d-none d-md-block'></div>
           </div>
           <div className='carousel-item'>
-            <img src='img/bs18.jpg' className='d-block w-100' alt='...' />
+            <img src='img/bs18.png' className='d-block w-100' alt='...' />
             <div className='carousel-caption d-none d-md-block'></div>
           </div>
         </div>

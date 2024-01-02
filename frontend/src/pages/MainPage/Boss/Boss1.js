@@ -1,9 +1,10 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import '../../../css/Boss-link.css';
+import { useEffect } from 'react';
 
 function Boss1() {
-  const videoId = 'EUfNXsL1dGM';
+  const videoId = '2RQRumw3urA';
   const opts = {
     height: '360',
     width: '640',
@@ -11,20 +12,34 @@ function Boss1() {
       autoplay: 1,
     },
   };
+  useEffect(() => {
+    const bossGif = document.querySelector('.bossGif_01');
+    bossGif.style.zIndex = '999';
 
+    const animationEndHandler = () => {
+      bossGif.style.zIndex = '-1';
+    };
+
+    bossGif.addEventListener('animationend', animationEndHandler);
+
+    return () => {
+      bossGif.removeEventListener('animationend', animationEndHandler);
+    };
+  }, []);
   return (
-    <div className='ContainerLinkBoss'>
-      <h2 className='nameBoss'>아르고스</h2>
+    <div className='ContainerLinkBoss1'>
+      <img src='img/boss1.gif' className='bossGif_01' alt='...' />
+      <h2 className='nameBoss'>카멘</h2>
       <div className='MusicBossLink1'>
         <YouTube videoId={videoId} opts={opts} />
       </div>
       <div className='AboutBoss'>
-        시즌2가 열린 후 등장한 최초의 어비스 레이드. 아르고스는 사슬 전쟁 때
-        파푸니카를 수호하던 가디언이었는데 갑자기 어딘가에서 명령 받는 모습과
-        함께 혼돈의 가디언으로 전향해서 반대로 파푸니카를 공격했다. 이때
-        알비온이 등장해서 아르고스를 제압했고 둘다 힘이 소진해서 잠들었다.
-        광기에 물들어 폭주한 알비온의 포효를 듣고 덩달아 깨어났다고 한다. 권장
-        아이템 레벨은 모든 관문 통틀어서 <b>1370</b>이다.
+        카제로스 휘하의 군단장 중 한명으로 가장 마지막으로 군단장에 임명된
+        최강의 군단장이며, 직책은 <b>어둠군단장</b>이다. 휘하엔 충성심 높은 소수
+        정예 악마들을 거느리고 있다고 한다. 루테란 상공에 붉은 달이 떠 이전보다
+        훨씬 강해진 채 격전의 평야에서 날뛰던 악마들의 공세를 플레이어와
+        에스더들이 저지하던 중 엄청난 광범위의 어둠을 흩뿌리고, 이후
+        아르데타인의 비공정에서 관측되면서 그 모습을 드러낸다.
       </div>
       <span className='Strategy'>
         <b>공략영상</b>
@@ -73,11 +88,11 @@ function Boss1() {
         </div>
         <div className='carousel-inner'>
           <div className='carousel-item active'>
-            <img src='img/bs1.jpg' className='d-block w-100' alt='...' />
+            <img src='img/bs1.png' className='d-block w-100' alt='...' />
             <div className='carousel-caption d-none d-md-block'></div>
           </div>
           <div className='carousel-item'>
-            <img src='img/bs2.jpg' className='d-block w-100' alt='...' />
+            <img src='img/bs2.png' className='d-block w-100' alt='...' />
             <div className='carousel-caption d-none d-md-block'></div>
           </div>
           <div className='carousel-item'>

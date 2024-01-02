@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import '../../../css/Boss-link.css';
+import { useEffect } from 'react';
 
 function Boss2() {
   const videoId = 'e1iidpnGM3g';
@@ -11,9 +12,23 @@ function Boss2() {
       autoplay: 1,
     },
   };
+  useEffect(() => {
+    const bossGif = document.querySelector('.bossGif_02');
+    bossGif.style.zIndex = '999';
 
+    const animationEndHandler = () => {
+      bossGif.style.zIndex = '-1';
+    };
+
+    bossGif.addEventListener('animationend', animationEndHandler);
+
+    return () => {
+      bossGif.removeEventListener('animationend', animationEndHandler);
+    };
+  }, []);
   return (
     <div className='ContainerLinkBoss2'>
+      <img src='img/boss2.gif' className='bossGif_02' alt='...' />
       <h2 className='nameBoss'>발탄</h2>
       <div className='MusicBossLink2'>
         <YouTube videoId={videoId} opts={opts} />
