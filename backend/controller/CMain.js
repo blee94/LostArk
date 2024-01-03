@@ -1,6 +1,5 @@
-const { User, Sequelize } = require('../model');
-const { Op } = require('sequelize');
+exports.handleData = (req, res) => {
+  const requestData = req.body;
 
-exports.main = (req, res) => {
-  res.render('main');
+  console.log('전송 성공', requestData);
 };

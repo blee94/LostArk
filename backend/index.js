@@ -1,17 +1,14 @@
 const express = require('express');
 const app = express();
 const PORT = 8000;
-const multer = require('multer');
-const session = require('express-session');
+const cors = require('cors');
 const path = require('path');
 
+app.use(cors());
 app.set('view engine', 'ejs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use('/static', express.static('static'));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const router = require('./routes');
 app.use('/', router);
