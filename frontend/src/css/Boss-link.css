@@ -182,7 +182,9 @@
 .nameBoss {
   position: absolute;
   top: 30px;
-  left: 820px;
+  left: 720px;
+  width: 350px;
+  text-align: center;
 }
 .AboutBoss {
   width: 500px;
@@ -234,4 +236,53 @@
 .bossMain {
   position: absolute;
   top: 1000px;
+}
+@keyframes fadeInName {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.bossName {
+  position: absolute;
+  width: 1200px;
+  height: 100px;
+  text-align: center;
+  top: -100px;
+  font-size: 50px;
+}
+.bossName1 {
+  color: rgb(40, 49, 172);
+  animation: fadeInName 6s ease-out forwards;
+  opacity: 0;
+}
+.bossName2 {
+  color: lightgreen;
+  animation: fadeInName 7s ease-out forwards;
+  opacity: 0;
+}
+.bossName3 {
+  color: rgb(172, 57, 57);
+  animation: fadeInName 10s ease-out forwards;
+  opacity: 0;
+}
+.bossName4 {
+  color: lightcoral;
+  animation: fadeInName 5s ease-out forwards;
+  opacity: 0;
+}
+.bossName5 {
+  color: rgb(86, 58, 177);
+  animation: fadeInName 12s ease-out forwards;
+  opacity: 0;
+}
+.bossName6 {
+  color: rgb(43, 121, 62);
+  animation: fadeInName 7s ease-out forwards;
+  opacity: 0;
 }

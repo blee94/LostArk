@@ -3,42 +3,190 @@
   height: 700px;
   border: 2px solid wheat;
   background-color: #15181d;
+  border-radius: 20px;
 }
+.hidden {
+  display: none;
+}
+
+/* ------------검색창-------------------- */
 .searchBox {
   display: flex;
   position: relative;
   bottom: 130px;
   justify-content: center;
 }
+/* -------------------네브바----------------- */
 .CNavContainer {
   display: flex;
   flex-direction: row;
 }
 .CNav {
   position: relative;
-  border: 1px solid wheat;
+  border-bottom: 1px solid wheat;
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: font-size 0.1s;
 }
-
-.Conatainer01 {
+.CNav:hover {
+  font-size: 1.1em;
+}
+/* ----------------공통------------------------- */
+.ConatainerBig {
   display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* ------------캐릭터----------------- */
+.Conatainer01 {
+  height: 600px;
 }
 .imgMainC {
   position: relative;
-  left: 100px;
+  margin-left: 130px;
+}
+.Container01_Sub1 {
+  position: relative;
 }
 .Container01_Sub2 {
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 200px;
-  font-size: 22px;
-  top: 30px;
+  margin-left: 700px;
+  margin-top: -410px;
+}
+
+/* ------------------장비---------------- */
+.Container02_Sub1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: 650px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 50px;
 }
 .Container01_Sub2 > div {
   padding-top: 30px;
+}
+.Equip {
+  position: relative;
+  left: 100px;
+  top: 30px;
+}
+/* ------------------보석-------------------- */
+.Container03_Sub1 {
+  display: flex;
+}
+.Container03_Sub1 > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+  margin-top: 150px;
+}
+.Container03_Sub1 > div > img {
+  background-color: #111111;
+  border-radius: 50%;
+  animation: pulseShadow 5s infinite;
+}
+@keyframes pulseShadow {
+  0% {
+    box-shadow: 0 0 3px rgb(82, 74, 74), 0 0 3px rgb(82, 74, 74);
+  }
+  50% {
+    box-shadow: 0 0 15px rgb(82, 74, 74), 0 0 15px rgb(82, 74, 74);
+  }
+  100% {
+    box-shadow: 0 0 3px rgb(82, 74, 74), 0 0 3px rgb(82, 74, 74);
+  }
+}
+.Container03_Sub2 {
+  display: flex;
+  position: relative;
+  height: 200px;
+}
+.Container03_Sub2 > div {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+  margin-top: 50px;
+}
+.Container03_Sub2 > div > div > div {
+  position: relative;
+  margin-top: 20px;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ---------------------카드------------------ */
+.Conatainer04 {
+  height: 600px;
+}
+.Container04_Sub1 {
+  display: flex;
+  position: relative;
+  width: 700px;
+  height: 600px;
+}
+.Container04_Sub1 > div {
+  width: 700px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Container04_Sub1 > div > div {
+  padding-top: 10px;
+}
+.Container04_Sub1 > div > div > div {
+  text-align: center;
+}
+.Container04_Sub1 > div > div > img {
+  width: 100px;
+  height: 140px;
+}
+.Container04_Sub2 {
+  display: flex;
+  position: relative;
+  bottom: 500px;
+  left: 700px;
+  height: 400px;
+  width: 400px;
+}
+.Container04_Sub2 > div > div {
+  padding-top: 5px;
+}
+.cardName {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(110, 146, 134);
+}
+/* ---------------------각인------------------- */
+.Container05_Sub1 {
+  width: 1000px;
+  height: 500px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  margin-left: 130px;
+  margin-top: 50px;
+}
+.Container05_Sub1 > div {
+  padding-top: 25px;
+  width: 300px;
+}
+.Container05_Sub1 > div > img {
+  width: 80px;
+  height: 80px;
 }

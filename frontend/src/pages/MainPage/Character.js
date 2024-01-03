@@ -5,6 +5,11 @@ import '../../css/Character.css';
 function Character() {
   const [characterName, setCharacterName] = useState('');
   const [characterInfo, setCharacterInfo] = useState(null);
+  const [activeTab, setActiveTab] = useState('Nav1');
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab); // 클릭된 탭으로 상태 변경
+  };
 
   const requestBtn = async () => {
     try {
@@ -19,7 +24,6 @@ function Character() {
         }
       );
 
-      // console.log(response.data);
       setCharacterInfo(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -34,11 +38,36 @@ function Character() {
     <>
       <div className='mainContainer'>
         <div className='CNavContainer'>
-          <div className='CNav Nav1'>캐릭터</div>
-          <div className='CNav Nav2'>장비</div>
-          <div className='CNav Nav3'>보석</div>
-          <div className='CNav Nav4'>카드</div>
-          <div className='CNav Nav5'>각인</div>
+          <div
+            className={activeTab === 'Nav1' ? 'CNav active' : 'CNav'}
+            onClick={() => handleTabClick('Nav1')}
+          >
+            캐릭터
+          </div>
+          <div
+            className={activeTab === 'Nav2' ? 'CNav active' : 'CNav'}
+            onClick={() => handleTabClick('Nav2')}
+          >
+            장비
+          </div>
+          <div
+            className={activeTab === 'Nav3' ? 'CNav active' : 'CNav'}
+            onClick={() => handleTabClick('Nav3')}
+          >
+            보석
+          </div>
+          <div
+            className={activeTab === 'Nav4' ? 'CNav active' : 'CNav'}
+            onClick={() => handleTabClick('Nav4')}
+          >
+            카드
+          </div>
+          <div
+            className={activeTab === 'Nav5' ? 'CNav active' : 'CNav'}
+            onClick={() => handleTabClick('Nav5')}
+          >
+            각인
+          </div>
         </div>
         <div className='ContainerMyPage'>
           <div className='searchBox'>
@@ -55,22 +84,35 @@ function Character() {
           </div>
           {characterInfo && (
             <>
-              <div className='Conatainer01'>
-                {/* <div className='ontainer01_Sub1'> */}
-                <img
-                  className='imgMainC'
-                  src={characterInfo.ArmoryProfile.CharacterImage}
-                  alt='Character'
-                  style={{ maxWidth: '500px', maxHeight: '500px' }}
-                />
-                {/* </div> */}
+              {/* 메인 */}
+              <div
+                className={
+                  activeTab === 'Nav1'
+                    ? 'Conatainer01 ContainerBig'
+                    : 'Conatainer01 ContainerBig hidden'
+                }
+              >
+                <div className='Container01_Sub1'>
+                  <img
+                    className='imgMainC'
+                    src={characterInfo.ArmoryProfile.CharacterImage}
+                    alt='Character'
+                    style={{
+                      maxWidth: '500px',
+                      maxHeight: '500px',
+                      top: '10px',
+                    }}
+                  />
+                </div>
                 <div className='Container01_Sub2'>
+                  <div>닉네임: {characterInfo.ArmoryProfile.CharacterName}</div>
                   <div>서버: {characterInfo.ArmoryProfile.ServerName}</div>
                   <div>
                     직업: {characterInfo.ArmoryProfile.CharacterClassName}
                   </div>
-                  <div>닉네임: {characterInfo.ArmoryProfile.CharacterName}</div>
-                  <div>칭호: {characterInfo.ArmoryProfile.Title}</div>
+                  <div>
+                    칭호: {characterInfo.ArmoryProfile.Title || '미설정'}
+                  </div>
                   <div>
                     아이템 레벨: {characterInfo.ArmoryProfile.ItemAvgLevel}
                   </div>
@@ -79,347 +121,151 @@ function Character() {
                   </div>
                 </div>
               </div>
-              {characterInfo.ArmoryEquipment &&
-                characterInfo.ArmoryEquipment.length > 0 && (
-                  <div>
-                    장비
-                    <img
-                      src={characterInfo.ArmoryEquipment[0].Icon}
-                      alt='Weapon'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[1].Icon}
-                      alt='Head'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[2].Icon}
-                      alt='Shirts'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[3].Icon}
-                      alt='Pants'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[4].Icon}
-                      alt='Gloves'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[5].Icon}
-                      alt='Shoulder'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[6].Icon}
-                      alt='Neckless'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[7].Icon}
-                      alt='Earing'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[8].Icon}
-                      alt='Earing'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[9].Icon}
-                      alt='Ring'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[10].Icon}
-                      alt='Ring'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[11].Icon}
-                      alt='Stone'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryEquipment[12].Icon}
-                      alt='Bracelet'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                  </div>
-                )}
-              {characterInfo.ArmoryGem &&
-                characterInfo.ArmoryGem.Gems &&
-                characterInfo.ArmoryGem.Gems.length > 0 && (
-                  <div>
-                    보석
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[0].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[1].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[2].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[3].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[4].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[5].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[6].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[7].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[8].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[9].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <img
-                      src={characterInfo.ArmoryGem.Gems[10].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                  </div>
-                )}
-              {characterInfo.ArmoryGem &&
-                characterInfo.ArmoryGem.Effects &&
-                characterInfo.ArmoryGem.Effects.length > 0 && (
-                  <div>
-                    보석정보
-                    <div>{characterInfo.ArmoryGem.Effects[0].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[0].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[1].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[1].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[2].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[2].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[3].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[3].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[4].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[4].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[5].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[5].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[6].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[6].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[7].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[7].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[8].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[8].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[9].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[9].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryGem.Effects[10].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryGem.Effects[10].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                  </div>
-                )}
-              {characterInfo.ArmoryAvatars &&
-                characterInfo.ArmoryGem.length > 0 && (
-                  <div>
-                    아바타
-                    <div>{characterInfo.ArmoryAvatars[0].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryAvatars[0].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryAvatars[1].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryAvatars[1].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryAvatars[2].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryAvatars[2].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryAvatars[3].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryAvatars[3].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                  </div>
-                )}
-              {characterInfo.ArmoryCard &&
-                characterInfo.ArmoryCard.Cards &&
-                characterInfo.ArmoryCard.Cards.length > 0 && (
-                  <div>
-                    카드
-                    <div>{characterInfo.ArmoryCard.Cards[0].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryCard.Cards[0].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryCard.Cards[1].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryCard.Cards[1].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryCard.Cards[2].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryCard.Cards[2].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryCard.Cards[3].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryCard.Cards[3].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryCard.Cards[4].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryCard.Cards[4].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryCard.Cards[5].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryCard.Cards[5].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                  </div>
-                )}
-
-              <div>
-                카드 효과
-                <div>{characterInfo.ArmoryCard.Effects[0].Items[0].Name}</div>
-                <div>
-                  {characterInfo.ArmoryCard.Effects[0].Items[0].Description}
+              {/* 장비 */}
+              <div
+                className={
+                  activeTab === 'Nav2'
+                    ? 'Conatainer02 ContainerBig'
+                    : 'Conatainer02 ContainerBig hidden'
+                }
+              >
+                {characterInfo.ArmoryEquipment &&
+                  characterInfo.ArmoryEquipment.length > 0 && (
+                    <div className='Container02_Sub1'>
+                      {characterInfo.ArmoryEquipment.map((equipment, index) => (
+                        <div key={index}>
+                          <div className='Equip'>{equipment.Name}</div>
+                          <img
+                            key={index}
+                            src={equipment.Icon}
+                            alt={`장비 ${index}`}
+                            style={{ width: '70px', height: '70px' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+              </div>
+              {/* 보석 */}
+              <div
+                className={
+                  activeTab === 'Nav3'
+                    ? 'Conatainer03 ContainerBig'
+                    : 'Conatainer03 ContainerBig hidden'
+                }
+              >
+                <div className='Container03_Sub1'>
+                  {characterInfo.ArmoryGem &&
+                    characterInfo.ArmoryGem.Gems &&
+                    characterInfo.ArmoryGem.Gems.length > 0 && (
+                      <div>
+                        {characterInfo.ArmoryGem.Gems.map((gem, index) => (
+                          <img
+                            key={index}
+                            src={gem.Icon}
+                            alt={`Gem ${index}`}
+                            style={{ maxWidth: '100px', maxHeight: '100px' }}
+                          />
+                        ))}
+                      </div>
+                    )}
                 </div>
-                <div>{characterInfo.ArmoryCard.Effects[0].Items[1].Name}</div>
-                <div>
-                  {characterInfo.ArmoryCard.Effects[0].Items[1].Description}
-                </div>
-                <div>{characterInfo.ArmoryCard.Effects[0].Items[2].Name}</div>
-                <div>
-                  {characterInfo.ArmoryCard.Effects[0].Items[2].Description}
-                </div>
-                <div>{characterInfo.ArmoryCard.Effects[0].Items[3].Name}</div>
-                <div>
-                  {characterInfo.ArmoryCard.Effects[0].Items[3].Description}
-                </div>
-                <div>{characterInfo.ArmoryCard.Effects[0].Items[4].Name}</div>
-                <div>
-                  {characterInfo.ArmoryCard.Effects[0].Items[4].Description}
+                {/* 보석정보 */}
+                <div className='Container03_Sub2'>
+                  {characterInfo.ArmoryGem &&
+                    characterInfo.ArmoryGem.Effects &&
+                    characterInfo.ArmoryGem.Effects.length > 0 && (
+                      <div>
+                        {characterInfo.ArmoryGem.Effects.map(
+                          (effect, index) => (
+                            <div key={index}>
+                              <img
+                                src={effect.Icon}
+                                alt={`Gem ${index}`}
+                                style={{
+                                  maxWidth: '100px',
+                                  maxHeight: '100px',
+                                }}
+                              />
+                              <div className='effectName'>{effect.Name}</div>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    )}
                 </div>
               </div>
-
-              {characterInfo.ArmoryEngraving &&
-                characterInfo.ArmoryEngraving.Effects &&
-                characterInfo.ArmoryEngraving.Effects.length > 0 && (
-                  <div>
-                    각인
-                    <div>{characterInfo.ArmoryEngraving.Effects[0].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryEngraving.Effects[0].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryEngraving.Effects[1].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryEngraving.Effects[1].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryEngraving.Effects[2].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryEngraving.Effects[2].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryEngraving.Effects[3].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryEngraving.Effects[3].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                    <div>{characterInfo.ArmoryEngraving.Effects[4].Name}</div>
-                    <img
-                      src={characterInfo.ArmoryEngraving.Effects[4].Icon}
-                      alt='Gem'
-                      style={{ maxWidth: '100px', maxHeight: '100px' }}
-                    />
-                  </div>
-                )}
+              {/* 카드 */}
+              <div
+                className={
+                  activeTab === 'Nav4'
+                    ? 'Conatainer04 ContainerBig'
+                    : 'Conatainer04 ContainerBig hidden'
+                }
+              >
+                <div className='Container04_Sub1'>
+                  {characterInfo.ArmoryCard &&
+                    characterInfo.ArmoryCard.Cards &&
+                    characterInfo.ArmoryCard.Cards.length > 0 && (
+                      <div>
+                        {characterInfo.ArmoryCard.Cards.map((card, index) => (
+                          <div key={index}>
+                            <div>{card.Name}</div>
+                            <img
+                              src={card.Icon}
+                              alt={`Card ${index}`}
+                              style={{ maxWidth: '200px', maxHeight: '300px' }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                </div>
+                {/* 카드정보 */}
+                <div className='Container04_Sub2'>
+                  {characterInfo.ArmoryCard &&
+                    characterInfo.ArmoryCard.Effects &&
+                    characterInfo.ArmoryCard.Effects.length > 0 && (
+                      <div>
+                        {characterInfo.ArmoryCard.Effects[0].Items.map(
+                          (item, index) => (
+                            <div key={index}>
+                              <div className='cardName'>{item.Name}</div>
+                              <div>{item.Description}</div>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    )}
+                </div>
+              </div>
+              {/* 각인 */}
+              <div
+                className={
+                  activeTab === 'Nav5'
+                    ? 'Conatainer05 ContainerBig'
+                    : 'Conatainer05 ContainerBig hidden'
+                }
+              >
+                {characterInfo.ArmoryEngraving &&
+                  characterInfo.ArmoryEngraving.Effects &&
+                  characterInfo.ArmoryEngraving.Effects.length > 0 && (
+                    <div className='Container05_Sub1'>
+                      {characterInfo.ArmoryEngraving.Effects.map(
+                        (effect, index) => (
+                          <div key={index}>
+                            <div>{effect.Name}</div>
+                            <img
+                              src={effect.Icon}
+                              alt='Gem'
+                              style={{ maxWidth: '100px', maxHeight: '100px' }}
+                            />
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
+              </div>
             </>
           )}
         </div>

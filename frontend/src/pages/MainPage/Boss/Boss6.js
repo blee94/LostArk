@@ -28,6 +28,7 @@ function Boss6() {
   }, []);
   return (
     <div className='ContainerLinkBoss6'>
+      <div className='bossName6 bossName'>질병군단장</div>
       <img src='img/boss6.gif' className='bossGif_06' alt='...' />
       <h2 className='nameBoss'>일리아칸</h2>
       <div className='MusicBossLink6'>

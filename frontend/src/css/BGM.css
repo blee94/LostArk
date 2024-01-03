@@ -1,11 +1,13 @@
 .bgmContainer {
   display: flex;
-  height: 100vh;
+  height: 1000px;
+  width: 1300px;
 }
 .musicPlayer {
-  height: 100vh;
+  height: 100%;
   position: relative;
   right: 650px;
+  margin-top: 10px;
 }
 
 body {
@@ -36,6 +38,9 @@ ul li:hover {
 .MusicTrackBox {
   /* border: 1px solid white; */
   width: 400px;
+}
+.MusicTrackBox > ul > li {
+  padding-top: 3px;
 }
 .Volume {
   position: relative;

@@ -28,6 +28,7 @@ function Boss3() {
   }, []);
   return (
     <div className='ContainerLinkBoss3'>
+      <div className='bossName3 bossName'>욕망군단장</div>
       <img src='img/boss3.gif' className='bossGif_03' alt='...' />
       <h2 className='nameBoss'>비아키스</h2>
       <div className='MusicBossLink3'>
