@@ -5,7 +5,35 @@ import axios from 'axios';
 function SignUp() {
   const [userid, setUserid] = useState('');
   const [pw, setPw] = useState('');
+  const [email, setEmail] = useState('');
+  const [nickname, setNickname] = useState('');
 
+  const userSignUp = () => {
+    if (!userid || !pw || !email || !nickname) {
+      alert('모든 필드를 입력해주세요.');
+      return;
+    }
+    const userInfo = {
+      userid: userid,
+      pw: pw,
+      email: email,
+      nickname: nickname,
+    };
+    axios
+      .post('http://localhost:8000/signup', userInfo)
+      .then((response) => {
+        if (response.data.isSuccess) {
+          console.log('Response from backend:', response.data);
+          alert('회원가입에 성공하였습니다');
+          document.location.href = '/SignIn';
+        } else {
+          alert(response.data.message); // 중복된 아이디인 경우 에러 메시지 표시
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
   const handleUseridChange = (e) => {
     setUserid(e.target.value);
   };
@@ -13,16 +41,11 @@ function SignUp() {
   const handlePwChange = (e) => {
     setPw(e.target.value);
   };
-
-  const userSignUp = () => {
-    axios({
-      method: 'post',
-      url: '/SignUp',
-      data: { userid, pw },
-    }).then((res) => {
-      const result = res.data;
-      console.log('res data result: ', result);
-    });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handleNicknameChange = (e) => {
+    setNickname(e.target.value);
   };
 
   return (
@@ -30,6 +53,7 @@ function SignUp() {
       <form className='userForm'>
         <input
           type='text'
+          name='userid'
           value={userid}
           onChange={handleUseridChange}
           className='UserId InputBox'
@@ -37,12 +61,29 @@ function SignUp() {
         />
         <input
           type='password'
+          name='pw'
           value={pw}
           onChange={handlePwChange}
           className='UserPw InputBox'
           placeholder='비밀번호'
         />
-        <button type='button' className='SubmitSignUp' onClick={userSignUp}>
+        <input
+          type='email'
+          name='email'
+          value={email}
+          onChange={handleEmailChange}
+          className='UserEmail InputBox'
+          placeholder='이메일'
+        />
+        <input
+          type='text'
+          name='nickname'
+          value={nickname}
+          onChange={handleNicknameChange}
+          className='UserNickname InputBox'
+          placeholder='닉네임'
+        />
+        <button className='SubmitSignUp' onClick={userSignUp}>
           등록
         </button>
       </form>

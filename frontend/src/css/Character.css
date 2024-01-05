@@ -61,6 +61,11 @@
   margin-left: 700px;
   margin-top: -410px;
 }
+.saveCharacterImg {
+  position: relative;
+  left: 1000px;
+  top: 130px;
+}
 
 /* ------------------장비---------------- */
 .Container02_Sub1 {

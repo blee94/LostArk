@@ -34,6 +34,7 @@ function Character() {
     setCharacterName(event.target.value);
   };
   console.log(characterInfo);
+
   return (
     <>
       <div className='mainContainer'>
