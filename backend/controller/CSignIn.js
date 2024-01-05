@@ -24,9 +24,9 @@ exports.userSignIn = (req, res) => {
       console.log('세션 아이디: ', req.session.userSessionID);
       console.log('세션 정보: ', req.session);
 
-      res.cookie('userSession', req.sessionID, {
-        maxAge: 60 * 60 * 1000,
-      });
+      // res.cookie('userSession', req.sessionID, {
+      //   maxAge: 60 * 60 * 1000,
+      // });
 
       res.json({
         isSuccess: true,

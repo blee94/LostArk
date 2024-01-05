@@ -19,6 +19,12 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  console.log(req.session);
+  res.locals.userid = req.session.userid;
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
