@@ -1,6 +1,6 @@
 function User(Sequelize, DataTypes) {
   return Sequelize.define(
-    'User',
+    'user',
     {
       useridx: {
         type: DataTypes.INTEGER,
@@ -11,6 +11,7 @@ function User(Sequelize, DataTypes) {
       userid: {
         type: DataTypes.STRING(30),
         allowNull: false,
+        unique: true,
       },
       pw: {
         type: DataTypes.STRING(255),
@@ -24,9 +25,13 @@ function User(Sequelize, DataTypes) {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
+      userimg: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+      },
     },
     {
-      tableName: 'User',
+      tableName: 'user',
       freezeTableName: true,
       timestamps: false,
     }

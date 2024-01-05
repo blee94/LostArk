@@ -1,18 +1,41 @@
 const express = require('express');
-const app = express();
-const PORT = 8000;
+const session = require('express-session');
+const router = require('./routes');
 const cors = require('cors');
-const path = require('path');
 
-app.use(cors());
+const app = express();
+
 app.set('view engine', 'ejs');
+
+app.use(
+  session({
+    secret: 'blee94',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      secure: false,
+    },
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const router = require('./routes');
+app.use(cors({ credentials: true }));
+
+const signupRouter = require('./routes/signup');
+app.use('/signup', signupRouter);
+
+const signinRouter = require('./routes/signin');
+app.use('/signin', signinRouter);
+
+const logoutRouter = require('./routes/logout');
+app.use('/logout', logoutRouter);
+
 app.use('/', router);
 
+const PORT = 8000;
 app.listen(PORT, function () {
   console.log(`Server Open! 서버 주소: http://localhost:${PORT}`);
 });

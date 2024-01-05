@@ -10,6 +10,8 @@ const sequelize = new Sequelize(
   config
 );
 
+db.User = require('./User')(sequelize, Sequelize);
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
