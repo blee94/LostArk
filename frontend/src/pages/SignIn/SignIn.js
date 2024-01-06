@@ -9,15 +9,19 @@ function SignIn() {
       userid: form.userid.value,
       pw: form.pw.value,
     };
-    axios.post('http://localhost:8000/signin', userInfo).then((response) => {
-      if (response.data.isSuccess) {
-        console.log('로그인 성공');
-        localStorage.setItem('userid', response.data.userid);
-      } else {
-        console.log('로그인 실패');
-        alert('아이디와 비밀번호를 확인해 주세요!');
-      }
-    });
+    axios
+      .post(`${process.env.REACT_APP_HOST}/signin`, userInfo, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        if (response.data.isSuccess) {
+          console.log('로그인 성공');
+          localStorage.setItem('userid', response.data.userid);
+        } else {
+          console.log('로그인 실패');
+          alert('아이디와 비밀번호를 확인해 주세요!');
+        }
+      });
   };
   return (
     <>
@@ -33,7 +37,7 @@ function SignIn() {
             placeholder='비밀번호'
             id='pw'
           ></input>
-          <button className='LogInBtn' onClick={userSignIn}>
+          <button type='button' className='LogInBtn' onClick={userSignIn}>
             로그인
           </button>
         </form>

@@ -20,7 +20,7 @@ function SignUp() {
       nickname: nickname,
     };
     axios
-      .post('http://localhost:8000/signup', userInfo)
+      .post(`${process.env.REACT_APP_HOST}/signup`, userInfo)
       .then((response) => {
         if (response.data.isSuccess) {
           console.log('Response from backend:', response.data);
