@@ -19,16 +19,10 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  console.log(req.session);
-  res.locals.userid = req.session.userid;
-  next();
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({ credentials: true }));
+app.use(cors({ origin: true, credentials: true }));
 
 const signupRouter = require('./routes/signup');
 app.use('/signup', signupRouter);
@@ -39,7 +33,20 @@ app.use('/signin', signinRouter);
 const logoutRouter = require('./routes/logout');
 app.use('/logout', logoutRouter);
 
+const uploadRouter = require('./routes/upload');
+app.use('/upload', uploadRouter);
+
 app.use('/', router);
+
+app.get('/checklogin', (req, res) => {
+  if (req.session && req.session.user) {
+    // 세션이 존재하고 사용자가 로그인된 상태인 경우
+    res.json({ loggedIn: true });
+  } else {
+    // 세션이 없거나 사용자가 로그인되지 않은 상태인 경우
+    res.json({ loggedIn: false });
+  }
+});
 
 const PORT = 8000;
 app.listen(PORT, function () {
