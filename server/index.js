@@ -40,6 +40,12 @@ app.use('/userdata', userDataRouter);
 const saveCharacterRouter = require('./routes/saveCharacter');
 app.use('/saveCharacter', saveCharacterRouter);
 
+const getimgRouter = require('./routes/getimg');
+app.use('/getimg', getimgRouter);
+
+const imgLikeRouter = require('./routes/imglike');
+app.use('/imglike', imgLikeRouter);
+
 app.use('/', router);
 
 app.get('/login', (req, res) => {

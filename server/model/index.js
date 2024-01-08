@@ -12,6 +12,7 @@ const sequelize = new Sequelize(
 
 db.User = require('./User')(sequelize, Sequelize);
 db.PostImg = require('./PostImg')(sequelize, Sequelize);
+db.ImgLike = require('./ImgLike')(sequelize, Sequelize);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

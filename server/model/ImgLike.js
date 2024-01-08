@@ -1,8 +1,6 @@
-const { User } = require('./User');
-
-function Img_like(Sequelize, DataTypes) {
+function ImgLike(Sequelize, DataTypes) {
   return Sequelize.define(
-    'Img_like',
+    'imglike',
     {
       imglikeidx: {
         type: DataTypes.INTEGER,
@@ -10,26 +8,25 @@ function Img_like(Sequelize, DataTypes) {
         primaryKey: true,
         autoIncrement: true,
       },
-      useridx: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      imglike: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
-      imgidx: {
+      userid: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+          model: 'user',
+          key: 'useridx',
+        },
       },
     },
     {
-      tableName: 'Img_like',
+      tableName: 'imglike',
       freezeTableName: true,
       timestamps: false,
-      uniqueKeys: {
-        unique_img_like: {
-          fields: ['useridx', 'imgidx'],
-        },
-      },
     }
   );
 }
 
-module.exports = Movie_like;
+module.exports = ImgLike;
