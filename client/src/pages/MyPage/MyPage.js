@@ -9,6 +9,29 @@ function MyPage() {
 
   const [characterInfo, setCharacterInfo] = useState(null);
 
+  const [userInfo, setUserInfo] = useState(null);
+  useEffect(() => {
+    // 사용자 정보를 불러오는 함수
+    const fetchUserInfo = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_HOST}/userdata`,
+          {
+            withCredentials: true,
+          }
+        );
+
+        // 서버에서 받아온 사용자 정보를 상태에 설정
+        setUserInfo(response.data);
+      } catch (error) {
+        console.error('사용자 정보 가져오기 에러:', error);
+      }
+    };
+
+    // 페이지 진입 시 사용자 정보 불러오기
+    fetchUserInfo();
+  }, []);
+
   const requestBtn = async () => {
     try {
       const response = await axios.get(
@@ -28,18 +51,45 @@ function MyPage() {
     }
   };
 
+  const saveMyCharacter = async () => {
+    if (!characterInfo || !characterInfo.ArmoryProfile) {
+      console.error('캐릭터 정보가 없습니다.');
+      return;
+    }
+
+    try {
+      const { CharacterImage } = characterInfo.ArmoryProfile;
+      await axios.post(`${process.env.REACT_APP_HOST}/saveCharacter`, {
+        userid: userInfo.userid,
+        userimg: CharacterImage,
+      });
+
+      // 저장 후 사용자 정보를 다시 불러와 화면에 적용
+      const response = await axios.get(
+        `${process.env.REACT_APP_HOST}/userdata`,
+        {
+          withCredentials: true,
+        }
+      );
+      setUserInfo(response.data);
+
+      console.log('캐릭터 정보 저장 완료');
+      alert('캐릭터 정보가 성공적으로 저장되었습니다.');
+    } catch (error) {
+      console.error('캐릭터 정보 저장 에러:', error);
+      alert('캐릭터 정보 저장에 실패했습니다.');
+    }
+  };
+
   useEffect(() => {
     checkLoginStatus();
   }, []);
 
   const checkLoginStatus = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_HOST}/checklogin`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`${process.env.REACT_APP_HOST}/login`, {
+        withCredentials: true,
+      });
       if (response.data.loggedIn) {
         setIsLoggedIn(true);
       } else {
@@ -49,6 +99,11 @@ function MyPage() {
       console.error('로그인 상태 확인 에러:', error);
     }
   };
+
+  // 페이지 진입 시 로그인 상태 체크
+  useEffect(() => {
+    checkLoginStatus();
+  }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -63,7 +118,10 @@ function MyPage() {
     const file = event.target.files[0];
     try {
       const formData = new FormData();
+      formData.append('userid', userInfo.userid);
       formData.append('image', file);
+      console.log('보내는 이미지:', file);
+      console.log('보내는 유저 아이디: ', userInfo.userid);
       const response = await axios.post(
         `${process.env.REACT_APP_HOST}/upload`,
         formData,
@@ -75,7 +133,6 @@ function MyPage() {
         }
       );
       console.log('이미지 업로드 완료:', response.data);
-      // 이미지 업로드 후에 필요한 작업 수행
     } catch (error) {
       console.error('이미지 업로드 에러:', error);
     }
@@ -97,7 +154,20 @@ function MyPage() {
                 : 'containerSub1 containerSub hidden'
             }
           >
-            Page1
+            {userInfo ? (
+              <div className='userInfoBox'>
+                <p>아이디: {userInfo.userid}</p>
+                <p>이메일: {userInfo.email}</p>
+                <p>닉네임: {userInfo.nickname}</p>
+                <img
+                  src={userInfo.userimg}
+                  alt='대표 캐릭터'
+                  className='myCharacterImg'
+                />
+              </div>
+            ) : (
+              <p>Loading user information...</p>
+            )}
           </div>
           <div
             className={
@@ -134,7 +204,9 @@ function MyPage() {
               <button type='button' onClick={requestBtn}>
                 검색
               </button>
-              <button type='button'>저장</button>
+              <button type='button' onClick={saveMyCharacter}>
+                저장
+              </button>
             </div>
           </div>
           <div
@@ -160,7 +232,7 @@ function MyPage() {
                 onChange={handleImageUpload}
               />
             </div>
-            <button>이미지 업로드</button>
+            <div className='myUploadedImg'></div>
           </div>
         </div>
         <div className='containerSection2'>

@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import '../../css/SignIn.css';
 import axios from 'axios';
 
 function SignIn() {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const userSignIn = () => {
     const form = document.forms['signIn'];
     const userInfo = {
@@ -16,13 +20,16 @@ function SignIn() {
       .then((response) => {
         if (response.data.isSuccess) {
           console.log('로그인 성공');
-          localStorage.setItem('userid', response.data.userid);
+          sessionStorage.setItem('userid', response.data.userid);
+          setIsLoggedIn(true);
+          navigate('/');
         } else {
           console.log('로그인 실패');
           alert('아이디와 비밀번호를 확인해 주세요!');
         }
       });
   };
+
   return (
     <>
       <div className='ContainerSignIn'>

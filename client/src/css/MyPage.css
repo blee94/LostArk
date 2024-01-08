@@ -45,6 +45,20 @@
   position: absolute;
   margin-top: 700px;
 }
+.userInfoBox {
+  display: flex;
+  flex-direction: column;
+}
+.userInfoBox > p {
+  position: relative;
+  top: 600px;
+  right: 50px;
+}
+
+.myCharacterImg {
+  position: relative;
+  width: 400px;
+}
 
 /* ------------------------------- */
 .containerSection2 {
