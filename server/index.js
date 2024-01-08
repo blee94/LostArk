@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const router = require('./routes');
 const cors = require('cors');
+const multer = require('multer');
 
 const app = express();
 
@@ -30,22 +31,36 @@ app.use('/signup', signupRouter);
 const signinRouter = require('./routes/signin');
 app.use('/signin', signinRouter);
 
-const logoutRouter = require('./routes/logout');
-app.use('/logout', logoutRouter);
-
 const uploadRouter = require('./routes/upload');
 app.use('/upload', uploadRouter);
 
+const userDataRouter = require('./routes/userdata');
+app.use('/userdata', userDataRouter);
+
+const saveCharacterRouter = require('./routes/saveCharacter');
+app.use('/saveCharacter', saveCharacterRouter);
+
 app.use('/', router);
 
-app.get('/checklogin', (req, res) => {
-  if (req.session && req.session.user) {
-    // 세션이 존재하고 사용자가 로그인된 상태인 경우
+app.get('/login', (req, res) => {
+  if (req.session && req.session.userid) {
     res.json({ loggedIn: true });
   } else {
-    // 세션이 없거나 사용자가 로그인되지 않은 상태인 경우
     res.json({ loggedIn: false });
   }
+});
+
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.json({ success: false, message: '로그아웃 실패' });
+    } else {
+      res.clearCookie('connect.sid');
+      res.json({ success: true, message: '로그아웃 성공' });
+      console.log('로그아웃 성공');
+      console.log('세션 상태: ', req.session);
+    }
+  });
 });
 
 const PORT = 8000;
