@@ -47,7 +47,7 @@
 
 ## API
 
-**[LostArk](https://developer-lostark.game.onstove.com)**
+**[Developer-LostArk](https://developer-lostark.game.onstove.com)**
 
 ## 🗂️ 디렉토리 구조
 
