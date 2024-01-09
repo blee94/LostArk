@@ -20,6 +20,7 @@ app.use(
   })
 );
 
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

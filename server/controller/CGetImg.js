@@ -1,6 +1,5 @@
 const { PostImg } = require('../model');
 
-// 이미지 가져오기 컨트롤러
 exports.getImages = async (req, res) => {
   try {
     const images = await PostImg.findAll({

@@ -5,10 +5,10 @@ const uploadRouter = express.Router();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // 파일 저장 경로 설정
+    cb(null, 'uploads/');
   },
   filename: function (req, file, cb) {
-    cb(null, file.originalname); // 파일 이름 설정 (유니크하게 설정하는 것이 좋음)
+    cb(null, file.originalname);
   },
 });
 
