@@ -70,7 +70,7 @@ function OOTD() {
         {images.map((image, index) => (
           <div className={`area${index + 1}`} key={index}>
             <img
-              src={image.imageUrl}
+              src={`${process.env.REACT_APP_HOST}/uploads/audioimg5.png`}
               alt={`OOTD${index + 1}`}
               onClick={() => handleImageClick(image.imageUrl)}
             />

@@ -6,12 +6,12 @@ function MyPage() {
   const [activeTab, setActiveTab] = useState('containerSub0');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [characterName, setCharacterName] = useState('');
-
+  const [uploadedImageUrl, setUploadedImageUrl] = useState('');
   const [characterInfo, setCharacterInfo] = useState(null);
+  const [userPostedImg, setUserPostedImg] = useState('');
 
   const [userInfo, setUserInfo] = useState(null);
   useEffect(() => {
-    // 사용자 정보를 불러오는 함수
     const fetchUserInfo = async () => {
       try {
         const response = await axios.get(
@@ -21,14 +21,12 @@ function MyPage() {
           }
         );
 
-        // 서버에서 받아온 사용자 정보를 상태에 설정
         setUserInfo(response.data);
       } catch (error) {
         console.error('사용자 정보 가져오기 에러:', error);
       }
     };
 
-    // 페이지 진입 시 사용자 정보 불러오기
     fetchUserInfo();
   }, []);
 
@@ -64,7 +62,6 @@ function MyPage() {
         userimg: CharacterImage,
       });
 
-      // 저장 후 사용자 정보를 다시 불러와 화면에 적용
       const response = await axios.get(
         `${process.env.REACT_APP_HOST}/userdata`,
         {
@@ -100,7 +97,6 @@ function MyPage() {
     }
   };
 
-  // 페이지 진입 시 로그인 상태 체크
   useEffect(() => {
     checkLoginStatus();
   }, []);
@@ -120,8 +116,8 @@ function MyPage() {
       const formData = new FormData();
       formData.append('userid', userInfo.userid);
       formData.append('image', file);
-      console.log('보내는 이미지:', file);
-      console.log('보내는 유저 아이디: ', userInfo.userid);
+      // console.log('보내는 이미지:', file);
+      // console.log('보내는 유저 아이디: ', userInfo.userid);
       const response = await axios.post(
         `${process.env.REACT_APP_HOST}/upload`,
         formData,
@@ -132,7 +128,15 @@ function MyPage() {
           },
         }
       );
-      console.log('이미지 업로드 완료:', response.data);
+
+      const uploadedImageUrl = response.data.imageUrl;
+      setUploadedImageUrl(uploadedImageUrl);
+
+      const userPostedImg = response.data.matchImages;
+      setUserPostedImg(userPostedImg);
+
+      console.log('다시 받아온 이미지:', userPostedImg);
+      console.log('이미지 업로드 완료:', uploadedImageUrl);
     } catch (error) {
       console.error('이미지 업로드 에러:', error);
     }
@@ -147,6 +151,7 @@ function MyPage() {
       <div className='containerMain'>
         <div className='containerSection1'>
           <div className='containerSub0 containerSub hidden'>Main</div>
+          {/* --------------------page1 left------------------------ */}
           <div
             className={
               activeTab === 'textBox1'
@@ -169,6 +174,7 @@ function MyPage() {
               <p>Loading user information...</p>
             )}
           </div>
+          {/* --------------------page2 left------------------------ */}
           <div
             className={
               activeTab === 'textBox2'
@@ -209,6 +215,7 @@ function MyPage() {
               </button>
             </div>
           </div>
+          {/* --------------------page3 left------------------------ */}
           <div
             className={
               activeTab === 'textBox3'
@@ -216,8 +223,14 @@ function MyPage() {
                 : 'containerSub3 containerSub hidden'
             }
           >
+            {/* <img
+              className='uploadedImage'
+              src={`${process.env.REACT_APP_HOST}/${userPostedImg[4].postimg}`}
+              alt=''
+            /> */}
             Page3
           </div>
+          {/* --------------------page4 left------------------------ */}
           <div
             className={
               activeTab === 'textBox4'
@@ -225,6 +238,11 @@ function MyPage() {
                 : 'containerSub4 containerSub hidden'
             }
           >
+            <img
+              className='uploadedImage'
+              src={`${process.env.REACT_APP_HOST}/${uploadedImageUrl}`}
+              alt=''
+            />
             <div className='userProfileImg'>
               <input
                 type='file'
@@ -232,9 +250,10 @@ function MyPage() {
                 onChange={handleImageUpload}
               />
             </div>
-            <div className='myUploadedImg'></div>
           </div>
         </div>
+        {/* --------------------page right------------------------ */}
+
         <div className='containerSection2'>
           <div
             className={activeTab === 'textBox1' ? 'textBox active' : 'textBox'}

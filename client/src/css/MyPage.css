@@ -23,10 +23,11 @@
 }
 .userProfileImg {
   position: relative;
-  border: 1px solid wheat;
+  /* border: 1px solid wheat; */
   width: 70%;
-  height: 70%;
-  margin-top: 100px;
+  height: 10%;
+  margin-top: 300px;
+  margin-left: 300px;
 }
 .containerSub1 > button {
   position: relative;
@@ -92,4 +93,10 @@
 .textBox:hover {
   background-color: blanchedalmond;
   opacity: 20%;
+}
+.uploadedImage {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  top: 150px;
 }
