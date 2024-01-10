@@ -77,6 +77,7 @@
   align-items: center;
   width: 350px;
   height: 398px;
+  cursor: pointer;
 }
 .textBox1 {
   grid-area: a;
@@ -91,8 +92,7 @@
   grid-area: d;
 }
 .textBox:hover {
-  background-color: blanchedalmond;
-  opacity: 20%;
+  background-color: rgba(255, 235, 205, 0.144);
 }
 .uploadedImage {
   width: 400px;

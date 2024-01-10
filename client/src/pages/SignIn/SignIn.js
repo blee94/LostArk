@@ -21,7 +21,9 @@ function SignIn() {
         if (response.data.isSuccess) {
           console.log('로그인 성공');
           sessionStorage.setItem('userid', response.data.userid);
+          sessionStorage.setItem('isLoggedIn', true);
           setIsLoggedIn(true);
+          alert('로그인 하였습니다. 메인 페이지로 이동합니다.');
           navigate('/');
         } else {
           console.log('로그인 실패');
@@ -33,13 +35,15 @@ function SignIn() {
   return (
     <>
       <div className='ContainerSignIn'>
-        <form name='signIn'>
+        <form name='signIn' className='signIn'>
           <input
+            type='text'
             className='UserId InputBox'
             placeholder='아이디'
             id='userid'
           ></input>
           <input
+            type='password'
             className='UserPw InputBox'
             placeholder='비밀번호'
             id='pw'

@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React from 'react';
+import React, { useState } from 'react';
 import Main from './pages/MainPage/Main';
 import MyPage from './pages/MyPage/MyPage';
 import SignIn from './pages/SignIn/SignIn';
@@ -21,14 +21,19 @@ import Boss5 from './pages/MainPage/Boss/Boss5';
 import Boss6 from './pages/MainPage/Boss/Boss6';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <div className='body'>
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/signin' element={<SignIn />} />
+          <Route
+            path='/signin'
+            element={<SignIn setIsLoggedIn={setIsLoggedIn} />}
+          />
           <Route path='/mypage' element={<MyPage />} />
           <Route path='/BGM' element={<BGM />} />
           <Route path='/Boss' element={<Boss />} />

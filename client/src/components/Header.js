@@ -4,28 +4,6 @@ import axios from 'axios';
 
 function Header() {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const goToPage = (pageName) => {
-    navigate(`/${pageName}`);
-  };
-
-  const handleLogin = () => {
-    axios
-      .get(`${process.env.REACT_APP_HOST}/login`, { withCredentials: true })
-      .then((response) => {
-        if (response.data.loggedIn) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
-        }
-      })
-      .catch((error) => {
-        console.error('로그인 상태 확인 요청 에러:', error);
-      });
-    goToPage('SignIn');
-  };
-
   const handleLogout = () => {
     axios
       .get(`${process.env.REACT_APP_HOST}/logout`, {
@@ -33,7 +11,8 @@ function Header() {
       })
       .then((response) => {
         if (response.data.success) {
-          setIsLoggedIn(false);
+          sessionStorage.removeItem('isLoggedIn'); // 로그아웃 시 로그인 상태 제거
+          alert('로그아웃 하였습니다.');
           navigate('');
         } else {
           console.log('로그아웃 실패');
@@ -45,19 +24,11 @@ function Header() {
   };
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_HOST}/login`, { withCredentials: true })
-      .then((response) => {
-        if (response.data.loggedIn) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
-        }
-      })
-      .catch((error) => {
-        console.error('로그인 상태 확인 요청 에러:', error);
-      });
-  }, [isLoggedIn]); // isLoggedIn 상태가 변경될 때마다 실행
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      // 로그인 상태라면 마이페이지로 이동
+    }
+  }, [navigate]);
 
   return (
     <>
@@ -68,7 +39,7 @@ function Header() {
           src='/img/Lalogo.png'
           onClick={() => navigate('')}
         />
-        {isLoggedIn ? (
+        {sessionStorage.getItem('isLoggedIn') === 'true' ? (
           <>
             <span className='LogInMyPage' onClick={() => navigate('MyPage')}>
               MyPage
@@ -78,7 +49,7 @@ function Header() {
             </span>
           </>
         ) : (
-          <span className='LogInHeader' onClick={handleLogin}>
+          <span className='LogInHeader' onClick={() => navigate('SignIn')}>
             LogIn
           </span>
         )}

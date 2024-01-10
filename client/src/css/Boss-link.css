@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 .ContainerLinkBoss {
   border: 1px wheat solid;
   border-radius: 10px;
@@ -14,6 +20,7 @@
   position: relative;
   display: flex;
   animation: fadeIn 5s forwards;
+  background-color: rgba(0, 0, 255, 0.055);
 }
 .ContainerLinkBoss2 {
   border: 2px lightgreen solid;
@@ -23,6 +30,7 @@
   position: relative;
   display: flex;
   animation: fadeIn 5s forwards;
+  background-color: rgba(43, 255, 0, 0.027);
 }
 .ContainerLinkBoss3 {
   border: 2px rgb(172, 57, 57) solid;
@@ -32,6 +40,7 @@
   position: relative;
   display: flex;
   animation: fadeIn 9s forwards;
+  background-color: rgba(214, 18, 18, 0.014);
 }
 .ContainerLinkBoss4 {
   border: 2px lightcoral solid;
@@ -41,6 +50,7 @@
   position: relative;
   display: flex;
   animation: fadeIn 3s forwards;
+  background-color: rgba(240, 128, 128, 0.062);
 }
 
 .ContainerLinkBoss5 {
@@ -51,6 +61,7 @@
   position: relative;
   display: flex;
   animation: fadeIn 10s forwards;
+  background-color: rgba(49, 13, 82, 0.178);
 }
 .ContainerLinkBoss6 {
   border: 2px rgb(43, 121, 62) solid;
@@ -60,6 +71,7 @@
   position: relative;
   display: flex;
   animation: fadeIn 6s forwards;
+  background-color: rgba(0, 128, 0, 0.062);
 }
 .bossGif_01 {
   position: absolute;

@@ -1,5 +1,4 @@
-import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 import '../../css/Class.css';
 import YouTube from 'react-youtube';
 
@@ -51,74 +50,83 @@ function Class() {
           <img
             src='img/classWorrior.png'
             onClick={() => scrollToClass(2)}
+            alt=''
           ></img>
         </div>
         <div className='c2'>
           <img
             src='img/classWorriorF.png'
             onClick={() => scrollToClass(3)}
+            alt=''
           ></img>
         </div>
         <div className='c3'>
           <img
             src='img/classFighterM.png'
             onClick={() => scrollToClass(4)}
+            alt=''
           ></img>
         </div>
         <div className='c4'>
           <img
             src='img/classSpecialist.png'
             onClick={() => scrollToClass(5)}
+            alt=''
           ></img>
         </div>
         <div className='c5'>
           <img
             src='img/classSorceror.png'
             onClick={() => scrollToClass(6)}
+            alt=''
           ></img>
         </div>
         <div className='c6'>
-          <img src='img/classHunter.png' onClick={() => scrollToClass(7)}></img>
+          <img
+            src='img/classHunter.png'
+            onClick={() => scrollToClass(7)}
+            alt=''
+          ></img>
         </div>
       </div>
       <div className='ContainerClassMain2' ref={classRefs[2]}>
-        <img src='/img/classWM.png'></img>
-        <img src='/img/classWS.png'></img>
+        <img src='/img/classWM.png' alt=''></img>
+        <img src='/img/classWS.png' alt=''></img>
         <div className='classVideo'>
           <YouTube videoId={videoId1} opts={opts} />
         </div>
       </div>
       <div className='ContainerClassMain3' ref={classRefs[3]}>
-        <img src='/img/classWFM.png'></img>
-        <img src='/img/classFS.png'></img>
+        <img src='/img/classWFM.png' alt=''></img>
+        <img src='/img/classFS.png' alt=''></img>
         <div className='classVideo'>
           <YouTube videoId={videoId2} opts={opts} />
         </div>
       </div>
       <div className='ContainerClassMain4' ref={classRefs[4]}>
-        <img src='/img/classFMM.png'></img>
-        <img src='/img/classFMS.png'></img>
+        <img src='/img/classFMM.png' alt=''></img>
+        <img src='/img/classFMS.png' alt=''></img>
         <div className='classVideo'>
           <YouTube videoId={videoId3} opts={opts} />
         </div>
       </div>
       <div className='ContainerClassMain5' ref={classRefs[5]}>
-        <img src='/img/classSpecialM.png'></img>
-        <img src='/img/classSpecialistS.png'></img>
+        <img src='/img/classSpecialM.png' alt=''></img>
+        <img src='/img/classSpecialistS.png' alt=''></img>
         <div className='classVideo'>
           <YouTube videoId={videoId4} opts={opts} />
         </div>
       </div>
       <div className='ContainerClassMain6' ref={classRefs[6]}>
-        <img src='/img/classSM.png'></img>
-        <img src='/img/classSS.png'></img>
+        <img src='/img/classSM.png' alt=''></img>
+        <img src='/img/classSS.png' alt=''></img>
         <div className='classVideo'>
           <YouTube videoId={videoId5} opts={opts} />
         </div>
       </div>
       <div className='ContainerClassMain7' ref={classRefs[7]}>
-        <img src='/img/classHM.png'></img>
-        <img src='/img/classHS.png'></img>
+        <img src='/img/classHM.png' alt=''></img>
+        <img src='/img/classHS.png' alt=''></img>
         <div className='classVideo'>
           <YouTube videoId={videoId6} opts={opts} />
         </div>

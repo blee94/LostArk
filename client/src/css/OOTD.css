@@ -12,32 +12,50 @@
 }
 .OOTDContainer img {
   width: 335px;
+  height: 200px;
   cursor: pointer;
+  border: 1px solid wheat;
 }
+
 .area1 {
   grid-area: area1;
-  /* border: 1px solid wheat; */
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area2 {
   grid-area: area2;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area3 {
   grid-area: area3;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area4 {
   grid-area: area4;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area5 {
   grid-area: area5;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area6 {
   grid-area: area6;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area7 {
   grid-area: area7;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .area8 {
   grid-area: area8;
+  border: 1px solid wheat;
+  height: 250px;
 }
 .areaContent {
   border: 1px wheat solid;

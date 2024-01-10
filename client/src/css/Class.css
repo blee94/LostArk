@@ -1,7 +1,7 @@
 .ContainerClassMain1 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
-  height: 951px;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -39,7 +39,7 @@
 }
 .ContainerClassMain2 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
+  width: 100%;
   height: 100%;
   background-color: #212227;
 }
@@ -49,7 +49,7 @@
 }
 .ContainerClassMain3 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
+  width: 100%;
   height: 100%;
   background-color: #212227;
 }
@@ -59,7 +59,7 @@
 }
 .ContainerClassMain4 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
+  width: 100%;
   height: 100%;
   background-color: #212227;
 }
@@ -69,7 +69,7 @@
 }
 .ContainerClassMain5 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
+  width: 100%;
   height: 100%;
   background-color: #212227;
 }
@@ -79,7 +79,7 @@
 }
 .ContainerClassMain6 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
+  width: 100%;
   height: 100%;
   background-color: #212227;
 }
@@ -89,7 +89,7 @@
 }
 .ContainerClassMain7 {
   border-bottom: 1px solid wheat;
-  width: 1900px;
+  width: 100%;
   height: 100%;
   background-color: #212227;
 }

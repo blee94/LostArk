@@ -300,13 +300,13 @@ function MyPage() {
             className={activeTab === 'textBox3' ? 'textBox active' : 'textBox'}
             onClick={() => handleTabClick('textBox3')}
           >
-            업로드한 이미지
+            내 갤러리
           </div>
           <div
             className={activeTab === 'textBox4' ? 'textBox active' : 'textBox'}
             onClick={() => handleTabClick('textBox4')}
           >
-            이미지 업로드
+            갤러리 업로드
           </div>
         </div>
       </div>

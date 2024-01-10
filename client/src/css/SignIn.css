@@ -77,10 +77,16 @@
 }
 .SignUp {
   position: relative;
-  top: 100px;
   font-size: 12px;
   color: wheat;
+  bottom: 40px;
 }
 .SignUp:hover {
   color: lightcoral;
+}
+.signIn {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
 }

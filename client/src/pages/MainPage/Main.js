@@ -39,23 +39,23 @@ function Main() {
         <div className='ContainerGrid'>
           <Link to='/BGM' className='GridBox B1'>
             <img src='img/audioEQ.gif' className='audioEQ' alt='...' />
-            BGM
+            <div className='CText'>BGM</div>
           </Link>
           <Link to='/Boss' className='GridBox B2'>
             {/* <img src='img/boss1.gif' className='bossGif' alt='...' /> */}
-            군단장
+            <div className='CText'>군단장</div>
           </Link>
           <Link to='/OOTD' className='GridBox B3'>
-            OOTD
+            <div className='CText'>갤러리</div>
           </Link>
           <Link to='/Character' className='GridBox B4'>
-            내 캐릭터
+            <div className='CText'>캐릭터</div>
           </Link>
           <Link to='/Entertainment' className='GridBox B5'>
-            Entertainment
+            <div className='CText'>Entertainment</div>
           </Link>
           <Link to='/Class' className='GridBox B6'>
-            클래스
+            <div className='CText'>클래스</div>
           </Link>
         </div>
       </div>
