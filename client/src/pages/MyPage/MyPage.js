@@ -146,6 +146,25 @@ function MyPage() {
     setCharacterName(event.target.value);
   };
 
+  useEffect(() => {
+    // userPostedImg가 변경될 때마다 이미지를 불러옴
+    const fetchUserPostedImage = async () => {
+      if (userPostedImg.length > 0) {
+        try {
+          const response = await axios.get(
+            `${process.env.REACT_APP_HOST}/${userPostedImg[0].postimg}`
+          );
+          // 이미지를 받아온 후에 세팅
+          setUserPostedImg(response.data);
+        } catch (error) {
+          console.error('업로드 이미지 불러오기 에러:', error);
+        }
+      }
+    };
+
+    fetchUserPostedImage();
+  }, [userPostedImg]);
+
   return (
     <>
       <div className='containerMain'>
@@ -223,12 +242,22 @@ function MyPage() {
                 : 'containerSub3 containerSub hidden'
             }
           >
-            {/* <img
-              className='uploadedImage'
-              src={`${process.env.REACT_APP_HOST}/${userPostedImg[4].postimg}`}
-              alt=''
-            /> */}
-            Page3
+            {userPostedImg && userPostedImg.length > 0 ? (
+              <>
+                {userPostedImg
+                  .slice(Math.max(0, userPostedImg.length - 3))
+                  .map((image, index) => (
+                    <img
+                      key={index}
+                      className='uploadedImage'
+                      src={`${process.env.REACT_APP_HOST}/${image.postimg}`}
+                      alt={`Uploaded ${index}`}
+                    />
+                  ))}
+              </>
+            ) : (
+              <p>No uploaded images yet</p>
+            )}
           </div>
           {/* --------------------page4 left------------------------ */}
           <div
@@ -239,7 +268,7 @@ function MyPage() {
             }
           >
             <img
-              className='uploadedImage'
+              className='uploadedUserImage'
               src={`${process.env.REACT_APP_HOST}/${uploadedImageUrl}`}
               alt=''
             />
@@ -271,7 +300,7 @@ function MyPage() {
             className={activeTab === 'textBox3' ? 'textBox active' : 'textBox'}
             onClick={() => handleTabClick('textBox3')}
           >
-            좋아요
+            업로드한 이미지
           </div>
           <div
             className={activeTab === 'textBox4' ? 'textBox active' : 'textBox'}

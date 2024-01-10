@@ -76,32 +76,16 @@ function OOTD() {
             />
           </div>
         ))}
-        <div className='area2'>
-          <img
-            src='img/OOTD2.jpg'
-            alt=''
-            onClick={() => handleImageClick('img/OOTD2.jpg')}
-          ></img>
-          <div className='areaContent'>
-            [잉친94]
-            <span
-              className={
-                liked['area2'] ? 'material-icons red' : 'material-icons'
-              }
-              onClick={() => handleLikeClick('area2')}
-            >
-              favorite
-            </span>
+
+        {images.map((image, index) => (
+          <div className={`area${index + 1}`} key={index}>
+            <img
+              src={`${process.env.REACT_APP_HOST}/uploads/audioimg5.png`}
+              alt={`OOTD${index + 1}`}
+              onClick={() => handleImageClick(image.imageUrl)}
+            />
           </div>
-          <Modal
-            isOpen={isModalOpen && expandedImageUrl === 'img/OOTD2.jpg'}
-            onRequestClose={handleCloseModal}
-            contentLabel='Expanded Image Modal'
-          >
-            <button onClick={handleCloseModal}>Close</button>
-            <img src={expandedImageUrl} alt='Expanded' />
-          </Modal>
-        </div>
+        ))}
         <div className='area3'>
           <img
             src='img/OOTD3.jpg'
@@ -120,12 +104,16 @@ function OOTD() {
             </span>
           </div>
           <Modal
-            isOpen={isModalOpen && expandedImageUrl === 'img/OOTD3.jpg'}
+            isOpen={isModalOpen}
             onRequestClose={handleCloseModal}
             contentLabel='Expanded Image Modal'
           >
             <button onClick={handleCloseModal}>Close</button>
-            <img src={expandedImageUrl} alt='Expanded' />
+            {expandedImageUrl &&
+              expandedImageUrl ===
+                `${process.env.REACT_APP_HOST}/uploads/audioimg5.png` && (
+                <img src={expandedImageUrl} alt='Expanded' />
+              )}
           </Modal>
         </div>
         <div className='area4'>

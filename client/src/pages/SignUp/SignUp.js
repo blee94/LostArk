@@ -27,7 +27,7 @@ function SignUp() {
           alert('회원가입에 성공하였습니다');
           document.location.href = '/SignIn';
         } else {
-          alert(response.data.message); // 중복된 아이디인 경우 에러 메시지 표시
+          alert(response.data.message);
         }
       })
       .catch((error) => {
