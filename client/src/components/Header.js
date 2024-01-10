@@ -36,7 +36,7 @@ function Header() {
         <img
           className='Logo'
           alt='Logo'
-          src='/img/Lalogo.png'
+          src='/img/newLogo.png'
           onClick={() => navigate('')}
         />
         {sessionStorage.getItem('isLoggedIn') === 'true' ? (
