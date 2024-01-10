@@ -26,6 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({ origin: true, credentials: true }));
 
+// const corsOptions = {
+//   origin: 'http://localhost:3000', // 프론트엔드 주소
+//   credentials: true,
+// };
+
+// app.use(cors(corsOptions));
+
 const signupRouter = require('./routes/signup');
 app.use('/signup', signupRouter);
 

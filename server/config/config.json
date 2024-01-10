@@ -9,7 +9,7 @@
   "production": {
     "database": "blee_pr2",
     "host": "blee-test.cjdzyegbyd6b.ap-northeast-2.rds.amazonaws.com",
-    "username": "blee2",
+    "username": "blee6",
     "password": "1123",
     "dialect": "mysql"
   }
