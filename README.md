@@ -163,6 +163,7 @@ Project2
 <br />
 
 ## 📋 ERD 다이어그램
+<img width="469" alt="erd" src="https://github.com/blee94/Project2/assets/143552237/886c82a4-bd78-484f-b6fd-2971275f8f03">
 
 <br />
 
