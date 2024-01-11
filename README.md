@@ -167,3 +167,6 @@ Project2
 <br />
 
 # 🖥️ 화면 구성 및 주요 기능
+
+### 메인페이지
+![initial] <img width="1920" alt="main" src="https://github.com/blee94/Project2/assets/143552237/52e492a2-976f-4ede-9760-79e8d05aa784">
