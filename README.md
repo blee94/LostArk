@@ -168,5 +168,26 @@ Project2
 
 # 🖥️ 화면 구성 및 주요 기능
 
-### 메인페이지
-![initial] <img width="1920" alt="main" src="https://github.com/blee94/Project2/assets/143552237/52e492a2-976f-4ede-9760-79e8d05aa784">
+### MainPage
+<img width="1920" alt="main" src="https://github.com/blee94/Project2/assets/143552237/52e492a2-976f-4ede-9760-79e8d05aa784">
+
+### BGM
+<img width="1920" alt="bgm" src="https://github.com/blee94/Project2/assets/143552237/d8e501f4-59f1-45b9-9549-833446520680">
+
+### Boss
+<img width="1920" alt="boss" src="https://github.com/blee94/Project2/assets/143552237/83566925-b491-4826-9cee-4341890b42c8">
+
+### Gallery
+<img width="1920" alt="gallery" src="https://github.com/blee94/Project2/assets/143552237/94c34bb7-f01f-4377-a39b-b03203faaebe">
+
+### Character
+<img width="1920" alt="character" src="https://github.com/blee94/Project2/assets/143552237/9eec9f46-6af2-4a54-88ee-42a64a5602bd">
+
+### Entertainment
+<img width="1904" alt="enter" src="https://github.com/blee94/Project2/assets/143552237/46feadbc-e6ec-43cc-9ded-506d744519d7">
+
+### Class
+<img width="1906" alt="class" src="https://github.com/blee94/Project2/assets/143552237/4e7a2c4c-8443-40de-98e8-b20bad01db92">
+
+### MyPage
+<img width="1920" alt="mypage" src="https://github.com/blee94/Project2/assets/143552237/909531bc-4c1d-4c04-9e7d-f8ea8087f699">
