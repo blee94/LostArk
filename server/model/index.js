@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
-// const config = require('../config/config.json')['development'];
-const config = require('../config/config.json')['production'];
+// 로컬에서 작업 시 development 사용
+const config = require('../config/config.json')['development'];
+// 배포시에는 production으로
+// const config = require('../config/config.json')['production'];
 
 const db = {};
 const sequelize = new Sequelize(
