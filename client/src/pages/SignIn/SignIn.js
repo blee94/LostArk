@@ -24,9 +24,11 @@ function SignIn() {
           sessionStorage.setItem('isLoggedIn', true);
           setIsLoggedIn(true);
           alert('로그인 하였습니다. 메인 페이지로 이동합니다.');
+          // console.log(response.data.message);
           navigate('/');
         } else {
           console.log('로그인 실패');
+          // console.log(response.data.message);
           alert('아이디와 비밀번호를 확인해 주세요!');
         }
       });
