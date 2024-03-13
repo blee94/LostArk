@@ -20,8 +20,8 @@ exports.userSignIn = (req, res) => {
       }
       req.session.userid = user.userid;
       req.session.userSessionID = req.sessionID;
-      // console.log('세션 유저 아이디: ', req.session.userid);
-      // console.log('세션 아이디: ', req.session.userSessionID);
+      console.log('세션 유저 아이디: ', req.session.userid);
+      console.log('세션 아이디: ', req.session.userSessionID);
       console.log('세션 정보: ', req.session);
 
       res.json({

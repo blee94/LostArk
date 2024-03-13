@@ -6,14 +6,6 @@ exports.getUserInfo = async (req, res) => {
     const userId = req.session.userid;
     console.log('유저아이디:', userId);
 
-    // const user = await User.findOne({ where: { userid: userId } });
-
-    // if (!user) {
-    //   return res.status(404).json({ message: '사용자를 찾을 수 없습니다.' });
-    // }
-
-    // const userNickname = user.nickname;
-
     return res.json(userId);
   } catch (error) {
     console.error('에러:', error);

@@ -17,7 +17,6 @@ async function uploadImage(req, res) {
       imageUrl: image.path,
       matchImages: matchImages,
     });
-    // console.log('반환하는 유저의 모든 이미지: ', matchImages);
   } catch (error) {
     console.error('파일 업로드 에러:', error);
     res.status(500).json({ message: '파일 업로드 실패' });

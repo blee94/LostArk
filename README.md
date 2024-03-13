@@ -10,18 +10,16 @@
 
 **[Boss]** 각 보스의 포스터 표시, 링크 이동시 대표 BGM 재생, 보상/공략 등 상세정보 확인
 
-**[OOTD]** 코디/캡쳐 자랑하기, 좋아요 눌러 마이페이지에서 관리
+**[갤러리]** 코디/캡쳐 자랑하기, 좋아요 눌러 마이페이지에서 관리
 
-**[App]** 여러 미니게임? (구상중)
-
-**[MyCharacter]** 자신의 캐릭터 검색해서 상세정보 찾아보기
+**[캐릭터]** 자신의 캐릭터 검색해서 상세정보 찾아보기
 
 **[Class]** 모든 클래스 모아보기(상세정보 포함)
 
-**[회원가입/로그인]** 유효성검사, ID/PW 찾기
+**[회원가입/로그인]**
 
 - **개발 기간** : 2023-12-26 ~ 2024-01-11(2주)
-- **배포 주소** : (http://15.164.171.50/)
+- **배포 주소** : http://15.164.171.50/ (서버 비용 문제로 인한 인스턴스 일시 중지)
   <br />
 
 <br />
@@ -60,169 +58,9 @@ Project2
 │  ├─ package-lock.json
 │  ├─ package.json
 │  ├─ public
-│  │  ├─ img
-│  │  │  ├─ audioEQ.gif
-│  │  │  ├─ audioImg1.png
-│  │  │  ├─ audioImg10.png
-│  │  │  ├─ audioImg11.png
-│  │  │  ├─ audioImg12.png
-│  │  │  ├─ audioImg13.png
-│  │  │  ├─ audioImg14.png
-│  │  │  ├─ audioImg15.png
-│  │  │  ├─ audioImg16.png
-│  │  │  ├─ audioImg17.png
-│  │  │  ├─ audioImg18.png
-│  │  │  ├─ audioImg19.png
-│  │  │  ├─ audioImg2.png
-│  │  │  ├─ audioImg20.png
-│  │  │  ├─ audioImg21.png
-│  │  │  ├─ audioImg22.png
-│  │  │  ├─ audioImg23.png
-│  │  │  ├─ audioImg24.png
-│  │  │  ├─ audioImg25.png
-│  │  │  ├─ audioImg26.png
-│  │  │  ├─ audioImg27.png
-│  │  │  ├─ audioImg28.png
-│  │  │  ├─ audioImg29.png
-│  │  │  ├─ audioImg3.png
-│  │  │  ├─ audioImg30.png
-│  │  │  ├─ audioImg31.png
-│  │  │  ├─ audioImg4.png
-│  │  │  ├─ audioImg5.png
-│  │  │  ├─ audioImg6.png
-│  │  │  ├─ audioImg7.png
-│  │  │  ├─ audioImg8.png
-│  │  │  ├─ audioImg9.png
-│  │  │  ├─ boss1.gif
-│  │  │  ├─ boss1.jpg
-│  │  │  ├─ boss2.gif
-│  │  │  ├─ boss2.jpg
-│  │  │  ├─ boss3.gif
-│  │  │  ├─ boss3.jpg
-│  │  │  ├─ boss4.gif
-│  │  │  ├─ boss4.jpg
-│  │  │  ├─ boss5.gif
-│  │  │  ├─ boss5.jpg
-│  │  │  ├─ boss6.gif
-│  │  │  ├─ boss6.jpg
-│  │  │  ├─ bossMain.png
-│  │  │  ├─ bs1.jpg
-│  │  │  ├─ bs1.png
-│  │  │  ├─ bs10.jpg
-│  │  │  ├─ bs11.jpg
-│  │  │  ├─ bs12.jpg
-│  │  │  ├─ bs13.jpg
-│  │  │  ├─ bs14.jpg
-│  │  │  ├─ bs15.jpg
-│  │  │  ├─ bs16.jpg
-│  │  │  ├─ bs16.png
-│  │  │  ├─ bs17.png
-│  │  │  ├─ bs18.jpg
-│  │  │  ├─ bs18.png
-│  │  │  ├─ bs2.jpg
-│  │  │  ├─ bs2.png
-│  │  │  ├─ bs3.png
-│  │  │  ├─ bs4.jpg
-│  │  │  ├─ bs5.jpg
-│  │  │  ├─ bs6.jpg
-│  │  │  ├─ bs7.jpg
-│  │  │  ├─ bs8.jpg
-│  │  │  ├─ bs9.jpg
-│  │  │  ├─ c1.png
-│  │  │  ├─ c10.png
-│  │  │  ├─ c11.png
-│  │  │  ├─ c2.png
-│  │  │  ├─ c3.png
-│  │  │  ├─ c4.png
-│  │  │  ├─ c5.png
-│  │  │  ├─ c6.png
-│  │  │  ├─ c7.png
-│  │  │  ├─ c8.png
-│  │  │  ├─ c9.png
-│  │  │  ├─ classFighterM.png
-│  │  │  ├─ classFMM.png
-│  │  │  ├─ classFMS.png
-│  │  │  ├─ classFS.png
-│  │  │  ├─ classHM.png
-│  │  │  ├─ classHS.png
-│  │  │  ├─ classHunter.png
-│  │  │  ├─ ClassSM.png
-│  │  │  ├─ classSorceror.png
-│  │  │  ├─ classSpecialist.png
-│  │  │  ├─ classSpecialistS.png
-│  │  │  ├─ classSpecialM.png
-│  │  │  ├─ classSS.png
-│  │  │  ├─ classWFM.png
-│  │  │  ├─ classWM.png
-│  │  │  ├─ classWorrior.png
-│  │  │  ├─ classWorriorF.png
-│  │  │  ├─ classWS.png
-│  │  │  ├─ LAlogo.png
-│  │  │  ├─ logo.png
-│  │  │  ├─ main1.jpg
-│  │  │  ├─ main2.jpg
-│  │  │  ├─ main3.jpg
-│  │  │  ├─ main4.jpg
-│  │  │  ├─ mococo.png
-│  │  │  ├─ My1.png
-│  │  │  ├─ OOTD1.jpg
-│  │  │  ├─ OOTD2.jpg
-│  │  │  ├─ OOTD3.jpg
-│  │  │  ├─ OOTD4.jpg
-│  │  │  ├─ OOTD5.jpg
-│  │  │  ├─ OOTD6.jpg
-│  │  │  ├─ OOTD7.jpg
-│  │  │  ├─ OOTD8.jpg
-│  │  │  ├─ smile.svg
-│  │  │  ├─ star.png
-│  │  │  └─ thanks.png
+│  │  └─ img
 │  │  ├─ index.html
 │  │  └─ playlist
-│  │     ├─ vol1_01_Sailing the Dream.wav
-│  │     ├─ vol1_02_Leonhart.wav
-│  │     ├─ vol1_03_Aman's Theme.wav
-│  │     ├─ vol1_04_The Castle of Luteran.wav
-│  │     ├─ vol1_05_Silian's Theme.wav
-│  │     ├─ vol1_06_Karmain's Theme.wav
-│  │     ├─ vol1_07_Into the Wider World.wav
-│  │     ├─ vol1_08_The Ark.wav
-│  │     ├─ vol1_09_Glory of Luteran.wav
-│  │     ├─ vol1_10_Leonhart X-mas Ver.wav
-│  │     ├─ vol1_11_Loarune.wav
-│  │     ├─ vol1_12_Waltz of the Flower.wav
-│  │     ├─ vol1_13_The Great Castle.wav
-│  │     ├─ vol1_14_Faten.wav
-│  │     ├─ vol2_01_Prelude.wav
-│  │     ├─ vol2_02_Tale of Pletze.wav
-│  │     ├─ vol2_03_Neria Pub.wav
-│  │     ├─ vol2_04_Mokoko Village.wav
-│  │     ├─ vol2_05_Heart of Krater.wav
-│  │     ├─ vol2_06_Starlight Island.wav
-│  │     ├─ vol2_07_Club Avenue.wav
-│  │     ├─ vol2_08_Tears of the Glacier Island.wav
-│  │     ├─ vol2_09_Calm Village.wav
-│  │     ├─ vol2_10_The House of Werner.wav
-│  │     ├─ vol2_11_Ocean World.wav
-│  │     ├─ vol2_12_Club Heartbeat.wav
-│  │     ├─ vol2_13_Nostalgia.wav
-│  │     ├─ vol2_14_Romantic Weapon Musical Ver.wav
-│  │     ├─ vol2_15_Liebeheim.wav
-│  │     ├─ vol3_01_The New Beginning.wav
-│  │     ├─ vol3_02_Consolation.wav
-│  │     ├─ vol3_03_Frost Jail Plateau.wav
-│  │     ├─ vol3_04_Chang Chun.wav
-│  │     ├─ vol3_05_Bern Castle.wav
-│  │     ├─ vol3_06_Karlaja Village.wav
-│  │     ├─ vol3_07_Nia Village.wav
-│  │     ├─ vol3_08_Delphi County.wav
-│  │     ├─ vol3_09_Saland Hill.wav
-│  │     ├─ vol3_10_Star Sandy Beach.wav
-│  │     ├─ vol3_11_Shadow Moon Market.wav
-│  │     ├─ vol3_12_Whispering Small Island.wav
-│  │     ├─ vol3_13_Peyto.wav
-│  │     ├─ vol3_14_Song of Sunset.wav
-│  │     ├─ vol3_15_Oe e hoomanao.wav
-│  │     └─ vol3_16_Albion's Rage.wav
 │  └─ src
 │     ├─ App.css
 │     ├─ App.js
@@ -325,7 +163,32 @@ Project2
 <br />
 
 ## 📋 ERD 다이어그램
+<img width="469" alt="erd" src="https://github.com/blee94/Project2/assets/143552237/886c82a4-bd78-484f-b6fd-2971275f8f03">
 
 <br />
 
 # 🖥️ 화면 구성 및 주요 기능
+
+### MainPage
+<img width="1920" alt="main" src="https://github.com/blee94/Project2/assets/143552237/52e492a2-976f-4ede-9760-79e8d05aa784">
+
+### BGM
+<img width="1920" alt="bgm" src="https://github.com/blee94/Project2/assets/143552237/d8e501f4-59f1-45b9-9549-833446520680">
+
+### Boss
+<img width="1920" alt="boss" src="https://github.com/blee94/Project2/assets/143552237/83566925-b491-4826-9cee-4341890b42c8">
+
+### Gallery
+<img width="1920" alt="gallery" src="https://github.com/blee94/Project2/assets/143552237/94c34bb7-f01f-4377-a39b-b03203faaebe">
+
+### Character
+<img width="1920" alt="character" src="https://github.com/blee94/Project2/assets/143552237/9eec9f46-6af2-4a54-88ee-42a64a5602bd">
+
+### Entertainment
+<img width="1904" alt="enter" src="https://github.com/blee94/Project2/assets/143552237/46feadbc-e6ec-43cc-9ded-506d744519d7">
+
+### Class
+<img width="1906" alt="class" src="https://github.com/blee94/Project2/assets/143552237/4e7a2c4c-8443-40de-98e8-b20bad01db92">
+
+### MyPage
+<img width="1920" alt="mypage" src="https://github.com/blee94/Project2/assets/143552237/909531bc-4c1d-4c04-9e7d-f8ea8087f699">
